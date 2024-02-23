@@ -49,7 +49,7 @@
         <activity
             android:name="com.zeeshanelahi.barcodescannerandcameraxdemo.Menu"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="fullSensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

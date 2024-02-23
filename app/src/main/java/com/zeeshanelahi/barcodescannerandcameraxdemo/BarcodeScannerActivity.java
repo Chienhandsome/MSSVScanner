@@ -334,7 +334,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
                     @Override
                     public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
                         if (error == null){
-                            //Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show();
@@ -347,42 +347,23 @@ public class BarcodeScannerActivity extends AppCompatActivity
         });
     }
     public boolean isMSSV(String mssv){
-
         if (mssv.length() != 8) {
             return false;
         }
-
-
         if (mssv.charAt(0) != '2' && mssv.charAt(0) != '1') {
             return false;
         }
-
-
         if (mssv.charAt(1) < '0' || mssv.charAt(1) > '9') {
             return false;
         }
-
         if (mssv.charAt(7) != '1') {
             return false;
         }
-
         for (int i = 2; i < 7; i++) {
             if (mssv.charAt(i) < '0' || mssv.charAt(i) > '9') {
                 return false;
             }
         }
-
         return true;
     }
-
-    public boolean svDaTonTai(String mssv){
-        for (SinhVien s : danhSachSV.sinhVienArrayList) {
-            if (mssv.equals(s.mssv)) {
-                return true;
-            }
-        }
-        Toast.makeText(BarcodeScannerActivity.this, "đã tt", Toast.LENGTH_SHORT).show();
-        return false;
-    }
-
 }

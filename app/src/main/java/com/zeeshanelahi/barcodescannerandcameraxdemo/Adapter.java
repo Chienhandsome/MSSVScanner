@@ -1,6 +1,7 @@
 package com.zeeshanelahi.barcodescannerandcameraxdemo;
-
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,20 +23,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Adapter extends BaseAdapter {
     private DanhSachSV context;
     private int layout;
     private List<SinhVien> sinhVienList;
-    private List<Boolean> checkArrayList;
+
     String link = "https://mssvscanner-default-rtdb.asia-southeast1.firebasedatabase.app";
     FirebaseDatabase database = FirebaseDatabase.getInstance(link);
 
-    public Adapter(DanhSachSV context, int layout, List<SinhVien> sinhVienList, List<Boolean> checkArrayList) {
+    public Adapter(DanhSachSV context, int layout, List<SinhVien> sinhVienList) {
         this.context = context;
         this.layout = layout;
         this.sinhVienList = sinhVienList;
-        this.checkArrayList = checkArrayList;
     }
 
     @Override
@@ -74,41 +77,68 @@ public class Adapter extends BaseAdapter {
         else{
             holder = (ViewHolder) view.getTag();
         }
+
         final SinhVien sinhVien = sinhVienList.get(i);
-
-        try{
-            if(checkArrayList.size() != 0 && checkArrayList.get(i)){
-                view.setBackgroundColor(Color.GRAY);
-            }
-        }
-        catch (Exception e){
-            Toast.makeText(context, "ArrayList rỗng" , Toast.LENGTH_SHORT).show();
-        };
-
-//        try{
-//            DatabaseReference reference = database.getReference("Danh Sách Sinh Viên");
-//            DataSnapshot snapshot = reference.get().getResult();
-//            String mssv = sinhVienList.get(i).toString();
-//
-//            if(checkArrayList.size() != 0 && snapshot.getValue().toString().equals("true")){
-//                view.setBackgroundColor(Color.GRAY);
-//            }
-//        }
-//        catch (Exception e){
-//            Toast.makeText(context, "ArrayList rỗng" , Toast.LENGTH_SHORT).show();
-//        };
 
         holder.tvMSSV.setText(sinhVien.getMssv());
         holder.tvLop.setText(sinhVien.getLop());
 
-        //click vào 1 sv
+        DatabaseReference reference = database.getReference();
+        Task<DataSnapshot> task = reference.get();
         ViewHolder finalHolder = holder;
+        task.addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DataSnapshot dataSnapshot = task.getResult();
+                    boolean value = Boolean.TRUE.equals(dataSnapshot.child("Danh Sách Sinh Viên").child(sinhVien.getMssv()).getValue(boolean.class));
+                    if (value){
+                        finalHolder.infoSV.setBackgroundColor(Color.GRAY);
+                    }
+                } else {
+
+                }
+            }
+        });
+
         holder.infoSV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference reference = database.getReference();
-                //reference.child("check").child().setValue(true);
-                finalHolder.infoSV.setBackgroundColor(Color.GRAY);
+                DatabaseReference studentReference = reference.child("Danh Sách Sinh Viên").child(sinhVien.getMssv());
+                studentReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DataSnapshot dataSnapshot = task.getResult();
+                            boolean value = Boolean.TRUE.equals(dataSnapshot.getValue(boolean.class));
+
+                            if (!value) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                builder.setMessage("Show SV có mã "+sinhVienList.get(i).getMssv()+ " ?");
+                                //builder.setMessage("biến SV có mã "+sinhVienList.get(i).getMssv()+ "?");
+
+                                builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        studentReference.setValue(true);
+                                        finalHolder.infoSV.setBackgroundColor(Color.GRAY);
+                                    }
+                                });
+
+                                builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                builder.show();
+                            }
+                        } else {
+                            // Xử lý lỗi
+                        }
+                    }
+                });
             }
         });
 

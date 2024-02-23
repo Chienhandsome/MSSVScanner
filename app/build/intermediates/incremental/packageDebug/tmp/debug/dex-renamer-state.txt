@@ -1,9 +1,9 @@
-#Mon Oct 30 21:27:41 ICT 2023
-base.0=D\:\\ANDROID_PROJECT\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\ANDROID_PROJECT\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\ANDROID_PROJECT\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=D\:\\ANDROID_PROJECT\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.4=D\:\\ANDROID_PROJECT\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sat Feb 17 17:48:05 ICT 2024
+base.0=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.3=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.4=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=13/classes.dex

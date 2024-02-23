@@ -1,5 +1,7 @@
 package com.zeeshanelahi.barcodescannerandcameraxdemo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -24,7 +26,7 @@ public class DanhSachSV extends AppCompatActivity {
     ImageButton backBT;
     public ArrayList<SinhVien> sinhVienArrayList = new ArrayList<SinhVien>();
     public ArrayList<Boolean> checkArrayList = new ArrayList<Boolean>();
-    Adapter adapter = new Adapter(this,R.layout.info_sv_row, sinhVienArrayList, checkArrayList);
+    Adapter adapter = new Adapter(this,R.layout.info_sv_row, sinhVienArrayList);
     ListView listView;
     String link = "https://mssvscanner-default-rtdb.asia-southeast1.firebasedatabase.app";
     FirebaseDatabase database = FirebaseDatabase.getInstance(link);
@@ -88,6 +90,7 @@ public class DanhSachSV extends AppCompatActivity {
                     }
                 });
                 Toast.makeText(DanhSachSV.this, "Có dữ liệu bị xóa!", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
@@ -105,4 +108,6 @@ public class DanhSachSV extends AppCompatActivity {
         backBT = findViewById(R.id.backButton);
         listView = findViewById(R.id.listview_ds_sinh_vien);
     }
+
+
 }

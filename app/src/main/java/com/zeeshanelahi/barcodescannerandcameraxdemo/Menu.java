@@ -38,4 +38,6 @@ public class Menu extends AppCompatActivity {
         quet = findViewById(R.id.button_Quet);
         showDS = findViewById(R.id.button_DS_Sinh_Vien);
     }
+
+
 }
