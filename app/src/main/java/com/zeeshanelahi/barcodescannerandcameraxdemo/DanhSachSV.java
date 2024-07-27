@@ -25,7 +25,6 @@ public class DanhSachSV extends AppCompatActivity {
 
     ImageButton backBT;
     public ArrayList<SinhVien> sinhVienArrayList = new ArrayList<SinhVien>();
-    public ArrayList<Boolean> checkArrayList = new ArrayList<Boolean>();
     Adapter adapter = new Adapter(this,R.layout.info_sv_row, sinhVienArrayList);
     ListView listView;
     String link = "https://mssvscanner-default-rtdb.asia-southeast1.firebasedatabase.app";

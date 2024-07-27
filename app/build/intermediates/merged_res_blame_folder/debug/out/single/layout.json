@@ -1,22 +1,22 @@
 [
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/ds_sinh_vien.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/ds_sinh_vien.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-57:/layout/info_sv_row.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-60:/layout/info_sv_row.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/activity_barcode_scanner.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/activity_barcode_scanner.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-57:/layout/menu.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-60:/layout/menu.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/menu.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/menu.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-57:/layout/activity_barcode_scanner.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-60:/layout/activity_barcode_scanner.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/info_sv_row.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/info_sv_row.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-57:/layout/ds_sinh_vien.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-60:/layout/ds_sinh_vien.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/dialog_xac_nhan_them_sv.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/dialog_xac_nhan_them_sv.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-57:/layout/dialog_xac_nhan_them_sv.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-60:/layout/dialog_xac_nhan_them_sv.xml"
     }
 ]

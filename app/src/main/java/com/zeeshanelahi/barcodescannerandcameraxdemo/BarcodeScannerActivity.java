@@ -7,6 +7,7 @@ import androidx.camera.core.CameraSelector;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
+import androidx.camera.view.PreviewView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,8 +28,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.mlkit.common.MlKitException;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.barcodescanner.CameraXViewModel;
@@ -36,17 +40,20 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.barcodescanner.VisionImageP
 import com.zeeshanelahi.barcodescannerandcameraxdemo.barcodescanner.BarcodeScannerProcessor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityBarcodeScannerBinding;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BarcodeScannerActivity extends AppCompatActivity
         implements ActivityCompat.OnRequestPermissionsResultCallback, ExchangeScannedData {
 
+    private static final String SERVER_URL = "http://10.0.1.136:3000/receive-message";
+
     private static final String TAG = "BarcodeScannerActivity";
     private static final int PERMISSION_REQUESTS = 1;
-    DanhSachSV danhSachSV = new DanhSachSV();
     private ActivityBarcodeScannerBinding binding;
-
     public boolean dialogIsShowing = false;
 
     @Nullable
@@ -59,7 +66,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
     private VisionImageProcessor imageProcessor;
     private boolean needUpdateGraphicOverlayImageSourceInfo;
 
-    private int lensFacing = CameraSelector.LENS_FACING_BACK;
+    private int lensFacing = CameraSelector.LENS_FACING_FRONT;
     private CameraSelector cameraSelector;
     private static final String STATE_SELECTED_MODEL = "selected_model";
     private static final String STATE_LENS_FACING = "lens_facing";
@@ -94,7 +101,11 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
         if (!allPermissionsGranted()) {
             getRuntimePermissions();
+
         }
+
+        binding.previewView.setImplementationMode(PreviewView.ImplementationMode.COMPATIBLE);
+
 
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,8 +114,6 @@ public class BarcodeScannerActivity extends AppCompatActivity
                 startActivities(new Intent[]{intent});
             }
         });
-
-
     }
 
     @Override
@@ -137,7 +146,6 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
     private void bindAllCameraUseCases() {
         bindPreviewUseCase();
-
         bindAnalysisUseCase();
     }
 
@@ -277,27 +285,12 @@ public class BarcodeScannerActivity extends AppCompatActivity
         handler.post(new Runnable() {
             @Override
             public void run() {
-//                if(!dialogIsShowing) {
-//                    if (mssv != null && !mssv.isEmpty() && isMSSV(mssv) ) {
-//                        if (svDaTonTai(mssv)) {
-//                            Toast.makeText(danhSachSV, "sinh viên đã tồn tại!", Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            dialogIsShowing = true;
-//                            binding.barcodeRawValue.setText(mssv);
-//                            binding.resultContainer.setVisibility(View.VISIBLE);
-//                            dialogConfirm(mssv);
-//                        }
-//                    }
-//                }
-
                 if (mssv != null && !mssv.isEmpty() && isMSSV(mssv) && !dialogIsShowing) {
-
                         dialogIsShowing = true;
                         binding.barcodeRawValue.setText(mssv);
                         binding.resultContainer.setVisibility(View.VISIBLE);
                         dialogConfirm(mssv);
                 }
-
             }
         });
     }
@@ -328,24 +321,52 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
-                DatabaseReference data = database.getReference();
-
-                data.child("Danh Sách Sinh Viên").child(mssv).setValue(false, new DatabaseReference.CompletionListener() {
-                    @Override
-                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                        if (error == null){
-                            Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+//                DatabaseReference data = database.getReference();
+//
+//                data.child("Danh Sách Sinh Viên").child(mssv).setValue(false, new DatabaseReference.CompletionListener() {
+//                    @Override
+//                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+//                        if (error == null){
+//                            Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
+//                        }
+//                        else {
+//                            Toast.makeText(BarcodeScannerActivity.this, "Cập nhật thất bại!", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
+                try {
+                    sendMessageToServer(mssv);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 dialogIsShowing = false;
                 dialog.dismiss();
             }
         });
     }
+
+    private void sendMessageToServer(String message) throws JSONException {
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        JSONObject jsonBody = new JSONObject();
+        jsonBody.put("message", message);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonBody,
+                response -> {
+                    // Handle response from server
+                    Toast.makeText(BarcodeScannerActivity.this, "Message sent successfully!", Toast.LENGTH_SHORT).show();
+                },
+                error -> {
+                    // Handle error
+                    Toast.makeText(BarcodeScannerActivity.this, "Failed to send message "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.e("pingping", "sendMessageToServer: "+ error.networkResponse );
+                    error.printStackTrace();
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+
+
     public boolean isMSSV(String mssv){
         if (mssv.length() != 8) {
             return false;

@@ -248,7 +248,6 @@ int attr buttonStyle 0x7f0300a0
 int attr buttonStyleSmall 0x7f0300a1
 int attr buttonTint 0x7f0300a2
 int attr buttonTintMode 0x7f0300a3
-int attr captureMode 0x7f0300a4
 int attr cardBackgroundColor 0x7f0300a5
 int attr cardCornerRadius 0x7f0300a6
 int attr cardElevation 0x7f0300a7
@@ -593,7 +592,6 @@ int attr fastScrollVerticalTrackDrawable 0x7f0301f9
 int attr finishPrimaryWithSecondary 0x7f0301fa
 int attr finishSecondaryWithPrimary 0x7f0301fb
 int attr firstBaselineToTopHeight 0x7f0301fc
-int attr flash 0x7f0301fd
 int attr floatingActionButtonLargePrimaryStyle 0x7f0301fe
 int attr floatingActionButtonLargeSecondaryStyle 0x7f0301ff
 int attr floatingActionButtonLargeStyle 0x7f030200
@@ -691,6 +689,7 @@ int attr imagePanX 0x7f03025b
 int attr imagePanY 0x7f03025c
 int attr imageRotate 0x7f03025d
 int attr imageZoom 0x7f03025e
+int attr implementationMode 0x7f030540
 int attr indeterminateAnimationType 0x7f03025f
 int attr indeterminateProgressStyle 0x7f030260
 int attr indicatorColor 0x7f030261
@@ -821,7 +820,6 @@ int attr layout_scrollEffect 0x7f0302dd
 int attr layout_scrollFlags 0x7f0302de
 int attr layout_scrollInterpolator 0x7f0302df
 int attr layout_wrapBehaviorInParent 0x7f0302e0
-int attr lensFacing 0x7f0302e1
 int attr liftOnScroll 0x7f0302e2
 int attr liftOnScrollColor 0x7f0302e3
 int attr liftOnScrollTargetViewId 0x7f0302e4
@@ -1025,7 +1023,6 @@ int attr percentX 0x7f0303a9
 int attr percentY 0x7f0303aa
 int attr perpendicularPath_percent 0x7f0303ab
 int attr persistent 0x7f0303ac
-int attr pinchToZoomEnabled 0x7f0303ad
 int attr pivotAnchor 0x7f0303ae
 int attr placeholderActivityName 0x7f0303af
 int attr placeholderText 0x7f0303b0
@@ -3294,7 +3291,6 @@ int id auto 0x7f080056
 int id autoComplete 0x7f080057
 int id autoCompleteToEnd 0x7f080058
 int id autoCompleteToStart 0x7f080059
-int id back 0x7f08005a
 int id backButton 0x7f08005b
 int id barcodeRawValue 0x7f08005c
 int id barrier 0x7f08005d
@@ -3335,6 +3331,7 @@ int id clip_vertical 0x7f08007f
 int id clockwise 0x7f080080
 int id closest 0x7f080081
 int id collapseActionView 0x7f080082
+int id compatible 0x7f08021e
 int id compress 0x7f080083
 int id confirm_button 0x7f080084
 int id constraint 0x7f080085
@@ -3415,7 +3412,6 @@ int id floating 0x7f0800cf
 int id forever 0x7f0800d0
 int id fragment_container_view_tag 0x7f0800d1
 int id frameLayout 0x7f0800d2
-int id front 0x7f0800d3
 int id frost 0x7f0800d4
 int id fullscreen_header 0x7f0800d5
 int id ghost_view 0x7f0800d6
@@ -3499,7 +3495,6 @@ int id matrix 0x7f080123
 int id message 0x7f080124
 int id middle 0x7f080125
 int id mini 0x7f080126
-int id mixed 0x7f080127
 int id month_grid 0x7f080128
 int id month_navigation_bar 0x7f080129
 int id month_navigation_fragment_toggle 0x7f08012a
@@ -3583,6 +3578,7 @@ int id path 0x7f080177
 int id pathRelative 0x7f080178
 int id peekHeight 0x7f080179
 int id percent 0x7f08017a
+int id performance 0x7f08021f
 int id pin 0x7f08017b
 int id position 0x7f08017c
 int id postLayout 0x7f08017d
@@ -3727,7 +3723,6 @@ int id unlabeled 0x7f080207
 int id up 0x7f080208
 int id useLogo 0x7f080209
 int id vertical_only 0x7f08020a
-int id video 0x7f08020b
 int id view_offset_helper 0x7f08020c
 int id view_transition 0x7f08020d
 int id view_tree_lifecycle_owner 0x7f08020e
@@ -3996,7 +3991,6 @@ int string abc_searchview_description_voice 0x7f100018
 int string abc_shareactionprovider_share_with 0x7f100019
 int string abc_shareactionprovider_share_with_application 0x7f10001a
 int string abc_toolbar_collapse_description 0x7f10001b
-int string androidx_camera_default_config_provider 0x7f10001c
 int string androidx_startup 0x7f10001d
 int string app_name 0x7f10001e
 int string appbar_scrolling_view_behavior 0x7f10001f
@@ -5679,12 +5673,6 @@ int styleable BottomSheetBehavior_Layout_shapeAppearanceOverlay 22
 int styleable BottomSheetBehavior_Layout_shouldRemoveExpandedCorners 23
 int[] styleable ButtonBarLayout { 0x7f030034 }
 int styleable ButtonBarLayout_allowStacking 0
-int[] styleable CameraView { 0x7f0300a4, 0x7f0301fd, 0x7f0302e1, 0x7f0303ad, 0x7f0303ef }
-int styleable CameraView_captureMode 0
-int styleable CameraView_flash 1
-int styleable CameraView_lensFacing 2
-int styleable CameraView_pinchToZoomEnabled 3
-int styleable CameraView_scaleType 4
 int[] styleable Capability { 0x7f0303d6, 0x7f03040e }
 int styleable Capability_queryPatterns 0
 int styleable Capability_shortcutMatchRequired 1
@@ -7127,8 +7115,9 @@ int styleable PreferenceTheme_preferenceTheme 13
 int styleable PreferenceTheme_seekBarPreferenceStyle 14
 int styleable PreferenceTheme_switchPreferenceCompatStyle 15
 int styleable PreferenceTheme_switchPreferenceStyle 16
-int[] styleable PreviewView { 0x7f0303ef }
+int[] styleable PreviewView { 0x7f0303ef, 0x7f030540 }
 int styleable PreviewView_scaleType 0
+int styleable PreviewView_implementationMode 1
 int[] styleable PropertySet { 0x010100dc, 0x0101031f, 0x7f0302c3, 0x7f030373, 0x7f030529 }
 int styleable PropertySet_android_visibility 0
 int styleable PropertySet_android_alpha 1
