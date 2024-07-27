@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-54:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\a3a915c37cbad328aadce44332327a14\\transformed\\jetified-play-services-base-18.1.0\\res\\values-pt-rBR\\values.xml",

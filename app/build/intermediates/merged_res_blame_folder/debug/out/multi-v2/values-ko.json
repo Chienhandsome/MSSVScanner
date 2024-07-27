@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:/values-ko/values-ko.xml",
+            "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-54:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\066d8b7ddcdf11be9395f4b8b7d62d66\\transformed\\preference-1.2.1\\res\\values-ko\\values-ko.xml",

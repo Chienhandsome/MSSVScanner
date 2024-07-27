@@ -103,10 +103,6 @@ public class BarcodeScannerActivity extends AppCompatActivity
             getRuntimePermissions();
 
         }
-
-        binding.previewView.setImplementationMode(PreviewView.ImplementationMode.COMPATIBLE);
-
-
         binding.backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
