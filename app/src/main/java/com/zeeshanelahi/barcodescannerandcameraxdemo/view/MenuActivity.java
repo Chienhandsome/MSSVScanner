@@ -12,25 +12,20 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastRece
 
 public class MenuActivity extends AppCompatActivity {
     private ActivityMenuBinding viewBinding;
+    private boolean haveJustOpenedApp = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewBinding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
-
+        InternetBroadCastReceiver.getInstance().activeBroadCast(this);
         setUpviewEvents();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        InternetBroadCastReceiver.getInstance().activeBroadCast(this);
-        if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)) {
-            Toast.makeText(this, "Available Network", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Unavailable Network", Toast.LENGTH_SHORT).show();
-        }
     }
 
     private void setUpviewEvents() {
