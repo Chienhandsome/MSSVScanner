@@ -8,6 +8,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiEndpoint;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiFactory;
 
@@ -32,21 +33,19 @@ public class ServerInteractor {
         return instance;
     }
 
-    public void sendMessageToServer(Context context, String message) throws JSONException {
+    public void sendMessageToServer(Context context, JSONArray jsonArray, SendMessageCallback callback) throws JSONException {
         RequestQueue queue = Volley.newRequestQueue(context);
 
         JSONObject jsonBody = new JSONObject();
-        jsonBody.put("MSSV", message);
+        jsonBody.put("MSSV", jsonArray);
 
         Log.d(TAG, "link server: " + SERVER_URL);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonBody,
                 response -> {
                     // Handle response from server
-                    JSONArray jsonArray = response.optJSONArray("validMssv");
-
+                    //JSONArray jsonArray = response.optJSONArray("validMssv");
                     Toast.makeText(context, "Gửi thành công !", Toast.LENGTH_SHORT).show();
-
                 },
                 error -> {
                     String errorMessage = error.getMessage();
@@ -54,7 +53,34 @@ public class ServerInteractor {
                         errorMessage = "Unknown error occurred";
                     }
                     Log.e(TAG, "sendMessageToServer: " + errorMessage);
-                    Toast.makeText(context, "Gửi thất bại\nThử kiểm tra link server !", Toast.LENGTH_SHORT).show();
+                    callback.onMessageFailed(jsonArray.toString());
+//                    Toast.makeText(context, "Gửi thất bại\nThử kiểm tra link server !", Toast.LENGTH_SHORT).show();
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+
+    public void sendMessageToServer(Context context, String mssv, SendMessageCallback callback) throws JSONException {
+        RequestQueue queue = Volley.newRequestQueue(context);
+
+        JSONObject jsonBody = new JSONObject();
+        jsonBody.put("MSSV", mssv);
+
+        Log.d(TAG, "link server: " + SERVER_URL);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonBody,
+                response -> {
+                    // Handle response from server
+                    //JSONArray jsonArray = response.optJSONArray("validMssv");
+                    Toast.makeText(context, "Gửi thành công !", Toast.LENGTH_SHORT).show();
+                },
+                error -> {
+                    String errorMessage = error.getMessage();
+                    if (errorMessage == null) {
+                        errorMessage = "Unknown error occurred";
+                    }
+                    Log.e(TAG, "sendMessageToServer: " + errorMessage);
+                    callback.onMessageFailed(mssv);
                 });
 
         queue.add(jsonObjectRequest);

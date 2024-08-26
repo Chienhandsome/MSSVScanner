@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -30,14 +31,27 @@ public final class ActivityMenuBinding implements ViewBinding {
   public final View horizontalRuler;
 
   @NonNull
+  public final Button pushQueueButton;
+
+  @NonNull
+  public final TextView queueLabel;
+
+  @NonNull
+  public final TextView queueTv;
+
+  @NonNull
   public final ImageView settingButton;
 
   private ActivityMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonNhapMa,
-      @NonNull Button buttonQuet, @NonNull View horizontalRuler, @NonNull ImageView settingButton) {
+      @NonNull Button buttonQuet, @NonNull View horizontalRuler, @NonNull Button pushQueueButton,
+      @NonNull TextView queueLabel, @NonNull TextView queueTv, @NonNull ImageView settingButton) {
     this.rootView = rootView;
     this.buttonNhapMa = buttonNhapMa;
     this.buttonQuet = buttonQuet;
     this.horizontalRuler = horizontalRuler;
+    this.pushQueueButton = pushQueueButton;
+    this.queueLabel = queueLabel;
+    this.queueTv = queueTv;
     this.settingButton = settingButton;
   }
 
@@ -86,6 +100,24 @@ public final class ActivityMenuBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.push_queue_button;
+      Button pushQueueButton = ViewBindings.findChildViewById(rootView, id);
+      if (pushQueueButton == null) {
+        break missingId;
+      }
+
+      id = R.id.queue_label;
+      TextView queueLabel = ViewBindings.findChildViewById(rootView, id);
+      if (queueLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.queue_tv;
+      TextView queueTv = ViewBindings.findChildViewById(rootView, id);
+      if (queueTv == null) {
+        break missingId;
+      }
+
       id = R.id.setting_button;
       ImageView settingButton = ViewBindings.findChildViewById(rootView, id);
       if (settingButton == null) {
@@ -93,7 +125,7 @@ public final class ActivityMenuBinding implements ViewBinding {
       }
 
       return new ActivityMenuBinding((ConstraintLayout) rootView, buttonNhapMa, buttonQuet,
-          horizontalRuler, settingButton);
+          horizontalRuler, pushQueueButton, queueLabel, queueTv, settingButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -48,6 +48,7 @@ MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] C:\Users
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Windows\.gradle\caches\transforms-3\29937fa621237d243067e3b8e313d353\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\ade252c5f0d3d8ad52d3e0f60573a28b\transformed\fragment-1.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\fdcec9c170bd7205216e417cb2ca0855\transformed\jetified-fragment-ktx-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:15:2-22:13
 MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.camera:camera-lifecycle:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\d8255f15b66acf7ae8dbb0c70991f04c\transformed\jetified-camera-lifecycle-1.0.0-beta04\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5fa1efc54168b727dc83b3c7e0e5cf24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
@@ -103,6 +104,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\fe6753e7bdd5a4b4f428d674e4ffd128\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-encoders-json:16.1.0] C:\Users\Windows\.gradle\caches\transforms-3\eb7b7f4c3c3ca50d3df2bff9d70ff808\transformed\jetified-firebase-encoders-json-16.1.0\AndroidManifest.xml:15:1-23:12
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\ceeb00bda45829010cc9bfb014600fb5\transformed\jetified-volley-1.2.1\AndroidManifest.xml:2:1-7:12
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:15:2-22:13
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:15:2-22:13
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5a09bd1382329007a71d25c03e5f9fcd\transformed\jetified-transport-api-2.2.0\AndroidManifest.xml:15:1-22:12
 	package
 		INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml
@@ -146,8 +149,14 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.3.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\576e8c3e3179c278d0ed66059dca528f\transformed\jetified-play-services-measurement-impl-21.3.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\1eefa1c1f473a1cb97358104d237a77d\transformed\jetified-play-services-measurement-sdk-api-21.3.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\1eefa1c1f473a1cb97358104d237a77d\transformed\jetified-play-services-measurement-sdk-api-21.3.0\AndroidManifest.xml:23:5-67
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:19:6-67
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:19:6-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:26:5-67
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:19:6-67
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:19:6-67
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:19:6-67
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:19:6-67
 	android:name
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:10:22-64
 application
@@ -367,6 +376,8 @@ MERGED from [androidx.fragment:fragment:1.6.0] C:\Users\Windows\.gradle\caches\t
 MERGED from [androidx.fragment:fragment:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\ade252c5f0d3d8ad52d3e0f60573a28b\transformed\fragment-1.6.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\fdcec9c170bd7205216e417cb2ca0855\transformed\jetified-fragment-ktx-1.6.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\fdcec9c170bd7205216e417cb2ca0855\transformed\jetified-fragment-ktx-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:18:6-75
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:18:6-75
 MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.camera:camera-lifecycle:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\d8255f15b66acf7ae8dbb0c70991f04c\transformed\jetified-camera-lifecycle-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
@@ -477,6 +488,10 @@ MERGED from [com.google.firebase:firebase-encoders-json:16.1.0] C:\Users\Windows
 MERGED from [com.google.firebase:firebase-encoders-json:16.1.0] C:\Users\Windows\.gradle\caches\transforms-3\eb7b7f4c3c3ca50d3df2bff9d70ff808\transformed\jetified-firebase-encoders-json-16.1.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\ceeb00bda45829010cc9bfb014600fb5\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\ceeb00bda45829010cc9bfb014600fb5\transformed\jetified-volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:18:6-75
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:18:6-75
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:18:6-75
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:18:6-75
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5a09bd1382329007a71d25c03e5f9fcd\transformed\jetified-transport-api-2.2.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5a09bd1382329007a71d25c03e5f9fcd\transformed\jetified-transport-api-2.2.0\AndroidManifest.xml:18:5-20:41
 	android:targetSdkVersion
@@ -495,10 +510,16 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.3.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\576e8c3e3179c278d0ed66059dca528f\transformed\jetified-play-services-measurement-impl-21.3.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\1eefa1c1f473a1cb97358104d237a77d\transformed\jetified-play-services-measurement-sdk-api-21.3.0\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.3.0] C:\Users\Windows\.gradle\caches\transforms-3\1eefa1c1f473a1cb97358104d237a77d\transformed\jetified-play-services-measurement-sdk-api-21.3.0\AndroidManifest.xml:24:5-79
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:20:6-79
+MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:20:6-79
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\48b1ccdfba6253ab16ba0fbb3b7b817a\transformed\jetified-transport-runtime-2.2.2\AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\48b1ccdfba6253ab16ba0fbb3b7b817a\transformed\jetified-transport-runtime-2.2.2\AndroidManifest.xml:22:5-79
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:20:6-79
+MERGED from [org.chromium.net:cronet-common:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\3caa8de43c66030fa95bd4ed1fd1f22e\transformed\jetified-cronet-common-119.6045.31\AndroidManifest.xml:20:6-79
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:20:6-79
+MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\ec192ab8d9601c536be7ea684b959661\transformed\jetified-cronet-api-119.6045.31\AndroidManifest.xml:20:6-79
 	android:name
 		ADDED from [com.google.firebase:firebase-database:20.2.2] C:\Users\Windows\.gradle\caches\transforms-3\656672ecad6ede061b6e28b1d525d014\transformed\jetified-firebase-database-20.2.2\AndroidManifest.xml:24:22-76
 service#com.google.firebase.components.ComponentDiscoveryService

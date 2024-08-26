@@ -1,110 +1,114 @@
 [
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_dialog_change_link_server.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\dialog_change_link_server.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:/layout_activity_setting.xml.flat",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:/layout/activity_setting.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_white_back.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_white_back.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:/layout_activity_menu.xml.flat",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:/layout/activity_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_dialog_input_code.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\dialog_input_code.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_ic_setting.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\ic_setting.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_activity_setting.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\activity_setting.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_dialog_confirm.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\dialog_confirm.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_dialog_input_code.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\dialog_input_code.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_dialog_confirm.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\dialog_confirm.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_dialog_change_link_server.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\dialog_change_link_server.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\activity_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_patse.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_patse.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\color_black.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\color\\black.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_round_edit_text.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\round_edit_text.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_android_black_24dp.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_android_black_24dp.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_activity_barcode_scanner.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\activity_barcode_scanner.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_ic_android_black_24dp.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\ic_android_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:/layout_dialog_input_code.xml.flat",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/dialog_input_code.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_ic_white_back.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\ic_white_back.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_activity_barcode_scanner.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\activity_barcode_scanner.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\color_black.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\color\\black.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\layout_activity_setting.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\activity_setting.xml"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_activity_menu.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\activity_menu.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_setting.xml.flat",
-        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_setting.xml"
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_round_edit_text.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\round_edit_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-57:\\drawable_ic_patse.xml.flat",
+        "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\drawable\\ic_patse.xml"
     }
 ]

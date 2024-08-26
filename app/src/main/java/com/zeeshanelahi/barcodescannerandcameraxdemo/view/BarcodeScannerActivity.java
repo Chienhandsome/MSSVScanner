@@ -29,7 +29,9 @@ import android.widget.Toast;
 
 import com.google.mlkit.common.MlKitException;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.CameraXViewModel;
@@ -37,8 +39,10 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.Exchan
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.VisionImageProcessor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.BarcodeScannerProcessor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityBarcodeScannerBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.WaitingQueue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
@@ -64,6 +68,18 @@ public class BarcodeScannerActivity extends AppCompatActivity
     private static final String STATE_SELECTED_MODEL = "selected_model";
     private static final String STATE_LENS_FACING = "lens_facing";
     private SeatRepository seatRepository;
+    private MssvQueueManager mssvQueueManager;
+    private SendMessageCallback callback = new SendMessageCallback() {
+        @Override
+        public void onMessageSentSucced() {
+        }
+
+        @Override
+        public void onMessageFailed(String mssv) {
+            mssvQueueManager.addMssvToQueue(mssv);
+
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +91,8 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
         binding = ActivityBarcodeScannerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        mssvQueueManager = new MssvQueueManager(this);
 
         new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()))
                 .get(CameraXViewModel.class)
@@ -320,13 +338,14 @@ public class BarcodeScannerActivity extends AppCompatActivity
             if (isReadyTosend ){
                 if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)){
                     try {
-                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv);
+                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv, callback);
                     } catch (JSONException e) {
                         Toast.makeText(BarcodeScannerActivity.this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "dialogConfirm: " + e.getMessage());
                     }
                 } else {
                     Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
-                    //add to queue
+                    mssvQueueManager.addMssvToQueue(mssv);
                 }
             }
             dialogIsShowing = false;
