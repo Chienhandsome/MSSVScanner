@@ -37,6 +37,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <Button
+        android:id="@+id/button_nhap_ma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp"
+        android:text="@string/nh_p_mssv"
+        android:textSize="14sp"
+        android:backgroundTint="@color/colorPrimary"/>
 
     <com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.GraphicOverlay
         android:id="@+id/graphic_overlay"

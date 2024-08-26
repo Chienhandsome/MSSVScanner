@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +20,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.ResultReceiver;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -35,6 +37,7 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.Exchan
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.VisionImageProcessor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.BarcodeScannerProcessor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityBarcodeScannerBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
 import org.json.JSONException;
 
@@ -56,7 +59,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
     @Nullable
     private VisionImageProcessor imageProcessor;
     private boolean needUpdateGraphicOverlayImageSourceInfo;
-    private int lensFacing = CameraSelector.LENS_FACING_BACK;
+    private int lensFacing = CameraSelector.LENS_FACING_BACK;//setting front or back camera
     private CameraSelector cameraSelector;
     private static final String STATE_SELECTED_MODEL = "selected_model";
     private static final String STATE_LENS_FACING = "lens_facing";
@@ -65,7 +68,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState != null) {
-            lensFacing = savedInstanceState.getInt(STATE_LENS_FACING, CameraSelector.LENS_FACING_BACK);
+            lensFacing = savedInstanceState.getInt(STATE_LENS_FACING, lensFacing);
         }
         cameraSelector = new CameraSelector.Builder().requireLensFacing(lensFacing).build();
 
@@ -94,6 +97,12 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
     private void setUpViewEvents() {
         binding.backButton.setOnClickListener(v -> {
+            finish();
+        });
+
+        binding.buttonNhapMa.setOnClickListener(v -> {
+            //goi menu mo input dialog
+            setResult(Activity.RESULT_OK);
             finish();
         });
     }
@@ -267,15 +276,12 @@ public class BarcodeScannerActivity extends AppCompatActivity
     @Override
     public void sendScannedCode(String mssv) {
         Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                if (mssv != null && !mssv.isEmpty() && isMSSV(mssv) && !dialogIsShowing) {
-                        dialogIsShowing = true;
-                        binding.barcodeRawValue.setText(mssv);
-                        binding.resultContainer.setVisibility(View.VISIBLE);
-                        dialogConfirm(mssv);
-                }
+        handler.post(() -> {
+            if (DataChecker.isMSSV(mssv) && !dialogIsShowing) {
+                    dialogIsShowing = true;
+                    binding.barcodeRawValue.setText(mssv);
+                    binding.resultContainer.setVisibility(View.VISIBLE);
+                    dialogConfirm(mssv);
             }
         });
     }
@@ -307,26 +313,5 @@ public class BarcodeScannerActivity extends AppCompatActivity
             dialogIsShowing = false;
             dialog.dismiss();
         });
-    }
-
-    public boolean isMSSV(String mssv){
-        if (mssv.length() != 8) {
-            return false;
-        }
-        if (mssv.charAt(0) != '2' && mssv.charAt(0) != '1') {
-            return false;
-        }
-        if (mssv.charAt(1) < '0' || mssv.charAt(1) > '9') {
-            return false;
-        }
-        if (mssv.charAt(7) != '1') {
-            return false;
-        }
-        for (int i = 2; i < 7; i++) {
-            if (mssv.charAt(i) < '0' || mssv.charAt(i) > '9') {
-                return false;
-            }
-        }
-        return true;
     }
 }

@@ -4,6 +4,7 @@ package com.zeeshanelahi.barcodescannerandcameraxdemo.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,6 +31,9 @@ public final class ActivityBarcodeScannerBinding implements ViewBinding {
   public final TextView barcodeRawValue;
 
   @NonNull
+  public final Button buttonNhapMa;
+
+  @NonNull
   public final GraphicOverlay graphicOverlay;
 
   @NonNull
@@ -46,12 +50,13 @@ public final class ActivityBarcodeScannerBinding implements ViewBinding {
 
   private ActivityBarcodeScannerBinding(@NonNull ConstraintLayout rootView,
       @NonNull ImageButton backButton, @NonNull TextView barcodeRawValue,
-      @NonNull GraphicOverlay graphicOverlay, @NonNull TextView label,
+      @NonNull Button buttonNhapMa, @NonNull GraphicOverlay graphicOverlay, @NonNull TextView label,
       @NonNull PreviewView previewView, @NonNull LinearLayout resultContainer,
       @NonNull ConstraintLayout scannerTopLayout) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.barcodeRawValue = barcodeRawValue;
+    this.buttonNhapMa = buttonNhapMa;
     this.graphicOverlay = graphicOverlay;
     this.label = label;
     this.previewView = previewView;
@@ -98,6 +103,12 @@ public final class ActivityBarcodeScannerBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button_nhap_ma;
+      Button buttonNhapMa = ViewBindings.findChildViewById(rootView, id);
+      if (buttonNhapMa == null) {
+        break missingId;
+      }
+
       id = R.id.graphic_overlay;
       GraphicOverlay graphicOverlay = ViewBindings.findChildViewById(rootView, id);
       if (graphicOverlay == null) {
@@ -125,7 +136,8 @@ public final class ActivityBarcodeScannerBinding implements ViewBinding {
       ConstraintLayout scannerTopLayout = (ConstraintLayout) rootView;
 
       return new ActivityBarcodeScannerBinding((ConstraintLayout) rootView, backButton,
-          barcodeRawValue, graphicOverlay, label, previewView, resultContainer, scannerTopLayout);
+          barcodeRawValue, buttonNhapMa, graphicOverlay, label, previewView, resultContainer,
+          scannerTopLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

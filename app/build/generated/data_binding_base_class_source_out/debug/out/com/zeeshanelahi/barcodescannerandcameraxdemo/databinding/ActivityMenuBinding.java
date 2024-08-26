@@ -21,6 +21,9 @@ public final class ActivityMenuBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button buttonNhapMa;
+
+  @NonNull
   public final Button buttonQuet;
 
   @NonNull
@@ -29,9 +32,10 @@ public final class ActivityMenuBinding implements ViewBinding {
   @NonNull
   public final ImageView settingButton;
 
-  private ActivityMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonQuet,
-      @NonNull View horizontalRuler, @NonNull ImageView settingButton) {
+  private ActivityMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonNhapMa,
+      @NonNull Button buttonQuet, @NonNull View horizontalRuler, @NonNull ImageView settingButton) {
     this.rootView = rootView;
+    this.buttonNhapMa = buttonNhapMa;
     this.buttonQuet = buttonQuet;
     this.horizontalRuler = horizontalRuler;
     this.settingButton = settingButton;
@@ -64,6 +68,12 @@ public final class ActivityMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_nhap_ma;
+      Button buttonNhapMa = ViewBindings.findChildViewById(rootView, id);
+      if (buttonNhapMa == null) {
+        break missingId;
+      }
+
       id = R.id.button_quet;
       Button buttonQuet = ViewBindings.findChildViewById(rootView, id);
       if (buttonQuet == null) {
@@ -82,8 +92,8 @@ public final class ActivityMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMenuBinding((ConstraintLayout) rootView, buttonQuet, horizontalRuler,
-          settingButton);
+      return new ActivityMenuBinding((ConstraintLayout) rootView, buttonNhapMa, buttonQuet,
+          horizontalRuler, settingButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

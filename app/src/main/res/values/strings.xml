@@ -21,5 +21,6 @@
     <string name="nh_p_link_server">Nhập link server</string>
     <string name="ok">OK</string>
     <string name="h_y">Hủy</string>
+    <string name="nh_p_mssv">Nhập MSSV</string>
 
 </resources>

@@ -3313,6 +3313,7 @@ int id bounceStart 0x7f080067
 int id btHuy 0x7f080068
 int id btXacNhan 0x7f080069
 int id buttonPanel 0x7f08006a
+int id button_nhap_ma 0x7f08022c
 int id button_quet 0x7f080220
 int id cache_measures 0x7f08006d
 int id callMeasure 0x7f08006e
@@ -3889,6 +3890,7 @@ int layout design_text_input_end_icon 0x7f0b002b
 int layout design_text_input_start_icon 0x7f0b002c
 int layout dialog_change_link_server 0x7f0b0083
 int layout dialog_confirm 0x7f0b0081
+int layout dialog_input_code 0x7f0b0084
 int layout expand_button 0x7f0b002f
 int layout image_frame 0x7f0b0030
 int layout m3_alert_dialog 0x7f0b0032
@@ -4156,6 +4158,7 @@ int string mtrl_timepicker_confirm 0x7f1000b1
 int string nav_app_bar_navigate_up_description 0x7f1000b2
 int string nav_app_bar_open_drawer_description 0x7f1000b3
 int string nh_p_link_server 0x7f1000cf
+int string nh_p_mssv 0x7f1000d4
 int string not_set 0x7f1000b4
 int string nothing 0x7f1000d0
 int string ok 0x7f1000d1

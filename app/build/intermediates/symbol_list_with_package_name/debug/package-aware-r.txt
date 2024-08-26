@@ -3314,6 +3314,7 @@ id bounceStart
 id btHuy
 id btXacNhan
 id buttonPanel
+id button_nhap_ma
 id button_quet
 id cache_measures
 id callMeasure
@@ -3890,6 +3891,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_change_link_server
 layout dialog_confirm
+layout dialog_input_code
 layout expand_button
 layout image_frame
 layout m3_alert_dialog
@@ -4157,6 +4159,7 @@ string mtrl_timepicker_confirm
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nh_p_link_server
+string nh_p_mssv
 string not_set
 string nothing
 string ok
