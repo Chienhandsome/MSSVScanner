@@ -4,7 +4,17 @@
             "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-54:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\557397eb0168d01b9727ceee95b60b36\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\80ba2a5e79208e5d4b0ebf083db6695f\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,185,256,326,396,464,532,636",
+                        "endColumns": "58,70,70,69,69,67,67,103,115",
+                        "endOffsets": "109,180,251,321,391,459,527,631,747"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\753331dddf5fb1cc70fe16dc8549e5b5\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "752,866,982,1104",
                         "endColumns": "113,115,121,133",
                         "endOffsets": "861,977,1099,1233"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\ba8f7c0916b6800e3d0db88dec298496\\transformed\\appcompat-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,114,185,256,326,396,464,532,636",
-                        "endColumns": "58,70,70,69,69,67,67,103,115",
-                        "endOffsets": "109,180,251,321,391,459,527,631,747"
                     }
                 }
             ]

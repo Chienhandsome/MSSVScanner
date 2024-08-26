@@ -45,17 +45,6 @@ public class InternetBroadCastReceiver extends BroadcastReceiver {
         }
     }
 
-//    private boolean isNetWorkAvailable(Context context) {
-//        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-//        if (connectivityManager == null){
-//            return false;
-//        }
-//        Network network = connectivityManager.getActiveNetwork();
-//        if (network == null) return false;
-//        NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(network);
-//        return capabilities != null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
-//    }
-
     public boolean isNetWorkAvailable(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager == null){

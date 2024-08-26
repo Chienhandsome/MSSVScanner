@@ -13,10 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityMenuBinding;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogChangeLinkServerBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogInputCodeBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ServerInteractor;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
 import org.json.JSONException;

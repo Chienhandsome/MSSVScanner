@@ -4,7 +4,7 @@
             "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-54:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\557397eb0168d01b9727ceee95b60b36\\transformed\\material-1.10.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\753331dddf5fb1cc70fe16dc8549e5b5\\transformed\\material-1.10.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

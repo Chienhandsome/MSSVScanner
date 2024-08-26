@@ -14,15 +14,13 @@ import androidx.lifecycle.ViewModelProvider;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.ResultReceiver;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -31,7 +29,8 @@ import android.widget.Toast;
 
 import com.google.mlkit.common.MlKitException;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ServerInteractor;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.CameraXViewModel;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.ExchangeScannedData;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.VisionImageProcessor;
@@ -63,6 +62,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
     private CameraSelector cameraSelector;
     private static final String STATE_SELECTED_MODEL = "selected_model";
     private static final String STATE_LENS_FACING = "lens_facing";
+    private SeatRepository seatRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -286,7 +286,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
         });
     }
 
-    public void dialogConfirm(String mssv){
+    public void dialogConfirm(String mssv) {
         Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_confirm);
@@ -295,7 +295,19 @@ public class BarcodeScannerActivity extends AppCompatActivity
         Button btHuy = dialog.findViewById(R.id.btHuy);
         TextView message = dialog.findViewById(R.id.message);
 
-        message.setText(String.format("%s%s", getString(R.string.th_m_th_ng_tin_sinh_vi_n), mssv));
+        seatRepository = new SeatRepository(this);
+        String seatInfo = seatRepository.getSeatInfo(mssv);
+
+        if (seatInfo == null) {
+            message.setText("N/A\n"+mssv);
+            message.setBackgroundColor(Color.YELLOW);
+        } else if (seatInfo.isEmpty()) {
+            message.setText("Not Found\n"+mssv);
+            message.setBackgroundColor(Color.RED);
+        } else {
+            message.setText(seatInfo+"\n"+mssv);
+            message.setBackgroundColor(Color.GREEN);
+        }
 
         dialog.show();
 

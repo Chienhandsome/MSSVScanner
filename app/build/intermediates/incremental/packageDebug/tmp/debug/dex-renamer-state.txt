@@ -1,20 +1,22 @@
-#Mon Aug 26 14:45:14 ICT 2024
+#Mon Aug 26 16:33:27 ICT 2024
 base.0=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.4=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.2=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.3=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
 base.5=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
 base.6=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.7=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.7=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.8=D\:\\AndroidProject\\BarcodeScannerAndCameraXDemo-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
-path.2=13/classes.dex
-path.3=14/classes.dex
-path.4=classes2.dex
+path.2=11/classes.dex
+path.3=13/classes.dex
+path.4=14/classes.dex
 path.5=2/classes.dex
 path.6=9/classes.dex
-path.7=11/classes.dex
+path.7=classes2.dex
+path.8=3/classes.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
@@ -23,3 +25,4 @@ renamed.4=classes5.dex
 renamed.5=classes6.dex
 renamed.6=classes7.dex
 renamed.7=classes8.dex
+renamed.8=classes9.dex
