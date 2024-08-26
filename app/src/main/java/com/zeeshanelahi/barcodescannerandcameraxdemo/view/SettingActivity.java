@@ -69,7 +69,12 @@ public class SettingActivity extends AppCompatActivity {
         dialogBinding.cancelButton.setOnClickListener(v -> dialog.dismiss());
 
         dialogBinding.addButton.setOnClickListener(v -> {
-            onChangeServerLink(dialogBinding.editTextText.getText().toString());
+            String link = dialogBinding.editTextText.getText().toString();
+            if(link.isEmpty()) {
+                Toast.makeText(this, "Link is empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            onChangeServerLink(link);
             dialog.dismiss();
         });
 
