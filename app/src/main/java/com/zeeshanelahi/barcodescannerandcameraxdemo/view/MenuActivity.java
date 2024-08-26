@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 import org.json.JSONException;
 
 public class MenuActivity extends AppCompatActivity {
+    private String TAG = "MenuActivity";
     private ActivityMenuBinding viewBinding;
     private SeatRepository seatRepository;
 
@@ -36,7 +38,7 @@ public class MenuActivity extends AppCompatActivity {
 
         seatRepository = new SeatRepository(this);
         seatRepository.loadSeats(seats -> {
-            Log.d("nimcheck", "onCreate: "+ seats);
+            Log.d(TAG, "onCreate: "+ seats);
             return null;
         });
     }
@@ -60,7 +62,6 @@ public class MenuActivity extends AppCompatActivity {
         dialog.setContentView(dialogBinding.getRoot());
         dialog.show();
 
-
         dialogBinding.cancelButton.setOnClickListener(v -> {
             dialog.dismiss();
         });
@@ -69,18 +70,24 @@ public class MenuActivity extends AppCompatActivity {
             String mssv = dialogBinding.editTextText.getText().toString();
             seatRepository = new SeatRepository(this);
             String seatInfo = seatRepository.getSeatInfo(mssv);
+
             if (mssv.isEmpty()){
                 Toast.makeText(this, "Vui lòng nhập mã số sinh viên", Toast.LENGTH_SHORT).show();
             }
             else if (!DataChecker.isMSSV(mssv)) {
                 Toast.makeText(this, "Mã số sinh viên không hợp lệ !", Toast.LENGTH_SHORT).show();
-            } else {
-                try {
-                    ServerInteractor.getInstance(this).sendMessageToServer(this, mssv);
-                } catch (JSONException e) {
-                    Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            } else if (seatInfo != null){
+                if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)){
+                    try {
+                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv);
+                    } catch (JSONException e) {
+                        Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                    dialogBinding.addButton.setOnClickListener(v1 -> dialog.dismiss());
+                } else {
+                    Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
+                    //add to queue
                 }
-                dialog.dismiss();
             }
         });
     }

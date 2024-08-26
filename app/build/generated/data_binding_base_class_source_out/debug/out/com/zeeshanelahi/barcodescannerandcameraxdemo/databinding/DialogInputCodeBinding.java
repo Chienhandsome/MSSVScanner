@@ -38,17 +38,22 @@ public final class DialogInputCodeBinding implements ViewBinding {
   public final View ruler;
 
   @NonNull
+  public final TextView seatTv;
+
+  @NonNull
   public final Space space;
 
   private DialogInputCodeBinding(@NonNull ConstraintLayout rootView, @NonNull TextView addButton,
       @NonNull TextView cancelButton, @NonNull EditText editTextText,
-      @NonNull FrameLayout frameLayout, @NonNull View ruler, @NonNull Space space) {
+      @NonNull FrameLayout frameLayout, @NonNull View ruler, @NonNull TextView seatTv,
+      @NonNull Space space) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.cancelButton = cancelButton;
     this.editTextText = editTextText;
     this.frameLayout = frameLayout;
     this.ruler = ruler;
+    this.seatTv = seatTv;
     this.space = space;
   }
 
@@ -109,6 +114,12 @@ public final class DialogInputCodeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.seat_tv;
+      TextView seatTv = ViewBindings.findChildViewById(rootView, id);
+      if (seatTv == null) {
+        break missingId;
+      }
+
       id = R.id.space;
       Space space = ViewBindings.findChildViewById(rootView, id);
       if (space == null) {
@@ -116,7 +127,7 @@ public final class DialogInputCodeBinding implements ViewBinding {
       }
 
       return new DialogInputCodeBinding((ConstraintLayout) rootView, addButton, cancelButton,
-          editTextText, frameLayout, ruler, space);
+          editTextText, frameLayout, ruler, seatTv, space);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

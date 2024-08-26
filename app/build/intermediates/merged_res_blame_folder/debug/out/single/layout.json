@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/activity_setting.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/activity_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:\\layout\\dialog_input_code.xml",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\dialog_input_code.xml"
     },
@@ -18,6 +14,10 @@
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:\\layout\\activity_menu.xml",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/layout/dialog_input_code.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/dialog_input_code.xml"
     },
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:\\layout\\dialog_change_link_server.xml",

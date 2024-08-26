@@ -48,10 +48,6 @@
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\layout\\dialog_change_link_server.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:/layout_activity_setting.xml.flat",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/activity_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\drawable_ic_patse.xml.flat",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\drawable\\ic_patse.xml"
     },
@@ -86,6 +82,10 @@
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:/layout_dialog_input_code.xml.flat",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-58:/layout/dialog_input_code.xml"
     },
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-merged_res-56:\\layout_activity_barcode_scanner.xml.flat",

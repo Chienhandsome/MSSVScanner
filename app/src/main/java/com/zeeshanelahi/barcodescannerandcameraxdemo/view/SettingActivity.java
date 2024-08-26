@@ -48,11 +48,19 @@ public class SettingActivity extends AppCompatActivity {
 
     private void setUpViewEvents() {
         viewBinding.backButton.setOnClickListener(v -> finish());
-
         viewBinding.changeButton.setOnClickListener(v -> displayDialog());
-
+        viewBinding.linkServerTV.setOnLongClickListener(v -> {
+            String link = viewBinding.linkServerTV.getText().toString();
+            if (link.isEmpty()) {
+                return false;
+            }
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("link", link);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, "Copied", Toast.LENGTH_SHORT).show();
+            return true;
+        });
         viewBinding.changeButtonFetchSeatList.setOnClickListener(view -> {
-//            Toast.makeText(this, "fetching", Toast.LENGTH_SHORT).show();
             seatRepository.loadSeats(seats -> {
             Toast.makeText(this, "Fetch Done", Toast.LENGTH_SHORT).show();
             return null;

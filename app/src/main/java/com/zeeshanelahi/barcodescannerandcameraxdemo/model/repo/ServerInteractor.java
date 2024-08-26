@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiEndpoint;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiFactory;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -42,7 +43,10 @@ public class ServerInteractor {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonBody,
                 response -> {
                     // Handle response from server
+                    JSONArray jsonArray = response.optJSONArray("validMssv");
+
                     Toast.makeText(context, "Gửi thành công !", Toast.LENGTH_SHORT).show();
+
                 },
                 error -> {
                     String errorMessage = error.getMessage();

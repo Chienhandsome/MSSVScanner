@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.google.mlkit.common.MlKitException;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.CameraXViewModel;
@@ -297,31 +298,42 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
         seatRepository = new SeatRepository(this);
         String seatInfo = seatRepository.getSeatInfo(mssv);
+        boolean isReadyTosend;
 
         if (seatInfo == null) {
+            isReadyTosend = false;
             message.setText("N/A\n"+mssv);
             message.setBackgroundColor(Color.YELLOW);
         } else if (seatInfo.isEmpty()) {
+            isReadyTosend = false;
             message.setText("Not Found\n"+mssv);
             message.setBackgroundColor(Color.RED);
         } else {
             message.setText(seatInfo+"\n"+mssv);
             message.setBackgroundColor(Color.GREEN);
+            isReadyTosend = true;
         }
 
         dialog.show();
 
-        btHuy.setOnClickListener(view -> {
+        btXacNhan.setOnClickListener(view -> {
+            if (isReadyTosend ){
+                if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)){
+                    try {
+                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv);
+                    } catch (JSONException e) {
+                        Toast.makeText(BarcodeScannerActivity.this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
+                    //add to queue
+                }
+            }
             dialogIsShowing = false;
             dialog.dismiss();
         });
 
-        btXacNhan.setOnClickListener(view -> {
-            try {
-                ServerInteractor.getInstance(this).sendMessageToServer(this, mssv);
-            } catch (JSONException e) {
-                Toast.makeText(BarcodeScannerActivity.this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+        btHuy.setOnClickListener(view -> {
             dialogIsShowing = false;
             dialog.dismiss();
         });

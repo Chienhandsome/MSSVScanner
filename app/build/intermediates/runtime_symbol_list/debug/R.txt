@@ -3644,6 +3644,7 @@ int id search_plate 0x7f0801ab
 int id search_src_text 0x7f0801ac
 int id search_voice_btn 0x7f0801ad
 int id seat_list_status 0x7f0801ae
+int id seat_tv 0x7f080228
 int id seekbar 0x7f0801af
 int id seekbar_value 0x7f0801b0
 int id select_dialog_listview 0x7f0801b1
@@ -4199,6 +4200,7 @@ int string search_menu_title 0x7f1000cd
 int string searchbar_scrolling_view_behavior 0x7f1000ce
 int string searchview_clear_text_content_description 0x7f1000cf
 int string searchview_navigation_content_description 0x7f1000d0
+int string seat_list 0x7f1000dc
 int string side_sheet_accessibility_pane_title 0x7f1000d1
 int string side_sheet_behavior 0x7f1000d2
 int string status_bar_notification_info_overflow 0x7f1000d3
