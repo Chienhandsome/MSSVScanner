@@ -83,6 +83,7 @@ public class MenuActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
+                    dialogBinding.seatTv.setText(seatInfo);
                     dialogBinding.addButton.setOnClickListener(v1 -> dialog.dismiss());
                 } else {
                     Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
