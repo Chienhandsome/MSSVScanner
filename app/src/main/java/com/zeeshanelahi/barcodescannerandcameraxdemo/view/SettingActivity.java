@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +15,14 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivitySetting
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogChangeLinkServerBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 
 import java.util.Objects;
 
 public class SettingActivity extends AppCompatActivity {
     private final String TAG = "SettingActivity";
     private ActivitySettingBinding viewBinding;
+    private SeatRepository seatRepository;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,17 +31,31 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(viewBinding.getRoot());
 
         viewBinding.linkServerTV.setText(SharedPreferencesHelper.getInstance(this).getString(StringValue.LINK_SERVER_KEY, StringValue.LINK_SERVER_DEFAULT));
-
         setUpViewEvents();
+
+        seatRepository = new SeatRepository(this);
+        seatRepository.loadSeats(seats -> {
+            runOnUiThread(() -> renderSeatInfo(seats.size()));
+            return null;
+        });
+    }
+
+    private void renderSeatInfo(int seatCount){
+        String result = "Have " + seatCount +" seats";
+        viewBinding.seatListStatus.setText(result);
     }
 
     private void setUpViewEvents() {
-        viewBinding.backButton.setOnClickListener(v -> {
-            finish();
-        });
+        viewBinding.backButton.setOnClickListener(v -> finish());
 
-        viewBinding.changeButton.setOnClickListener(v -> {
-            displayDialog();
+        viewBinding.changeButton.setOnClickListener(v -> displayDialog());
+
+        viewBinding.changeButtonFetchSeatList.setOnClickListener(view -> {
+//            Toast.makeText(this, "fetching", Toast.LENGTH_SHORT).show();
+            seatRepository.loadSeats(seats -> {
+            Toast.makeText(this, "Fetch Done", Toast.LENGTH_SHORT).show();
+            return null;
+            });
         });
     }
 
@@ -49,9 +66,7 @@ public class SettingActivity extends AppCompatActivity {
         dialog.setContentView(dialogBinding.getRoot());
         dialog.show();
 
-        dialogBinding.cancelButton.setOnClickListener(v -> {
-            dialog.dismiss();
-        });
+        dialogBinding.cancelButton.setOnClickListener(v -> dialog.dismiss());
 
         dialogBinding.addButton.setOnClickListener(v -> {
             onChangeServerLink(dialogBinding.editTextText.getText().toString());

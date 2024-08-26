@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityMenuBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogInputCodeBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
@@ -22,6 +24,7 @@ import org.json.JSONException;
 
 public class MenuActivity extends AppCompatActivity {
     private ActivityMenuBinding viewBinding;
+    private SeatRepository seatRepository;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +33,12 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(viewBinding.getRoot());
         InternetBroadCastReceiver.getInstance().activeBroadCast(this);
         setUpviewEvents();
+
+        seatRepository = new SeatRepository(this);
+        seatRepository.loadSeats(seats -> {
+            Log.d("nimcheck", "onCreate: "+ seats);
+            return null;
+        });
     }
 
     private void setUpviewEvents() {

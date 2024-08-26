@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#000000">
 
-
     <View
         android:id="@+id/ruler"
         android:layout_width="match_parent"
@@ -53,6 +52,45 @@
         android:backgroundTint="#000000"
         android:textColor="#0069BC"
         android:text="@string/s_a"/>
+
+    <TextView
+        android:id="@+id/label_seat_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/change_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:text="Seat List"/>
+
+    <TextView
+        android:id="@+id/seat_list_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/label_seat_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/change_button"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textColor="#888888"
+        android:textSize="16sp"
+        android:text="Empty"/>
+
+    <Button
+        android:id="@+id/change_button_fetch_seat_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/seat_list_status"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#000000"
+        android:textColor="#0069BC"
+        android:text="CẬP NHẬT"/>
 
     <Button
         android:id="@+id/back_button"

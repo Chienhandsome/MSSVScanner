@@ -8,6 +8,6 @@ public class BarcodeApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        InternetBroadCastReceiver.getInstance().activeBroadCast(this);
+        //InternetBroadCastReceiver.getInstance().activeBroadCast(this);
     }
 }

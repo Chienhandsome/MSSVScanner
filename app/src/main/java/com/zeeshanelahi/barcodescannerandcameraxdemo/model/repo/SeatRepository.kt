@@ -14,7 +14,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class SeatRepository(private val context: Context) {
-
+    private val TAG = "SeatRepository";
     private val requestQueue: RequestQueue = Volley.newRequestQueue(context)
     private val sharedPreferencesHelper: SharedPreferencesHelper = SharedPreferencesHelper.getInstance(context)
     private val seatData = mutableListOf<Seat>()
@@ -26,13 +26,17 @@ class SeatRepository(private val context: Context) {
         if (!savedData.isNullOrEmpty()) {
             updateMemoryFromPreferences(savedData)
             callback(seatData)
+            Log.d(TAG, "loadSeats: savedData not null")
         } else {
+            Log.d(TAG, "loadSeats: fetchSeatData called")
             fetchSeatData(callback)
         }
     }
 
     private fun fetchSeatData(callback: (List<Seat>) -> Unit) {
         val url = ApiFactory.createApi(ApiEndpoint.GET_SEATS, context)
+        //val url = "https://nodejs-ggsheet-7eadcecf0f62.herokuapp.com/all-mssv-seats"
+        Log.d(TAG, "fetchSeatData: url: $url")
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET,
             url,
@@ -47,7 +51,7 @@ class SeatRepository(private val context: Context) {
                 callback(seatData)
             },
             { error ->
-                error.printStackTrace()
+                    error.printStackTrace()
             }
         )
         requestQueue.add(jsonArrayRequest)
@@ -59,7 +63,13 @@ class SeatRepository(private val context: Context) {
             val item: JSONObject = response.getJSONObject(i)
             val mssv = item.getString("mssv")
             val seat = item.getString("seat")
-            list.add(Seat(mssv, seat))
+            if (mssv.isNotEmpty() && seat.isNotEmpty()){
+                list.add(Seat(mssv, seat))
+                Log.d(TAG, "parseSeatData: mssv: $mssv, seat: $seat")
+            }
+            else{
+                Log.e(TAG, "parseSeatData: NULL mssv or seat")
+            }
         }
         return list
     }
@@ -71,6 +81,7 @@ class SeatRepository(private val context: Context) {
             jsonObject.put("mssv", seat.mssv)
             jsonObject.put("seat", seat.seat)
             jsonArray.put(jsonObject)
+            Log.d(TAG, "size of jsonArray: ${jsonArray.length()}")
         }
         sharedPreferencesHelper.saveString("seat_data", jsonArray.toString())
     }
@@ -123,5 +134,4 @@ class SeatRepository(private val context: Context) {
         }
         return null
     }
-
 }

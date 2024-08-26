@@ -3338,6 +3338,7 @@ id chain
 id chain2
 id chains
 id change_button
+id change_button_fetch_seat_list
 id checkbox
 id checked
 id chronometer
@@ -3469,6 +3470,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id label
+id label_seat_list
 id labeled
 id layout
 id left
@@ -3642,6 +3644,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id seat_list_status
 id seekbar
 id seekbar_value
 id select_dialog_listview

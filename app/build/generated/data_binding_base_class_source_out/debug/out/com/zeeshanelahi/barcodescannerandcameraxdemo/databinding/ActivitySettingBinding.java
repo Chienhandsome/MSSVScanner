@@ -27,22 +27,35 @@ public final class ActivitySettingBinding implements ViewBinding {
   public final Button changeButton;
 
   @NonNull
+  public final Button changeButtonFetchSeatList;
+
+  @NonNull
+  public final TextView labelSeatList;
+
+  @NonNull
   public final TextView linkServerTV;
 
   @NonNull
   public final View ruler;
 
   @NonNull
+  public final TextView seatListStatus;
+
+  @NonNull
   public final TextView textview;
 
   private ActivitySettingBinding(@NonNull ConstraintLayout rootView, @NonNull Button backButton,
-      @NonNull Button changeButton, @NonNull TextView linkServerTV, @NonNull View ruler,
-      @NonNull TextView textview) {
+      @NonNull Button changeButton, @NonNull Button changeButtonFetchSeatList,
+      @NonNull TextView labelSeatList, @NonNull TextView linkServerTV, @NonNull View ruler,
+      @NonNull TextView seatListStatus, @NonNull TextView textview) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.changeButton = changeButton;
+    this.changeButtonFetchSeatList = changeButtonFetchSeatList;
+    this.labelSeatList = labelSeatList;
     this.linkServerTV = linkServerTV;
     this.ruler = ruler;
+    this.seatListStatus = seatListStatus;
     this.textview = textview;
   }
 
@@ -85,6 +98,18 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.change_button_fetch_seat_list;
+      Button changeButtonFetchSeatList = ViewBindings.findChildViewById(rootView, id);
+      if (changeButtonFetchSeatList == null) {
+        break missingId;
+      }
+
+      id = R.id.label_seat_list;
+      TextView labelSeatList = ViewBindings.findChildViewById(rootView, id);
+      if (labelSeatList == null) {
+        break missingId;
+      }
+
       id = R.id.linkServerTV;
       TextView linkServerTV = ViewBindings.findChildViewById(rootView, id);
       if (linkServerTV == null) {
@@ -97,6 +122,12 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.seat_list_status;
+      TextView seatListStatus = ViewBindings.findChildViewById(rootView, id);
+      if (seatListStatus == null) {
+        break missingId;
+      }
+
       id = R.id.textview;
       TextView textview = ViewBindings.findChildViewById(rootView, id);
       if (textview == null) {
@@ -104,7 +135,7 @@ public final class ActivitySettingBinding implements ViewBinding {
       }
 
       return new ActivitySettingBinding((ConstraintLayout) rootView, backButton, changeButton,
-          linkServerTV, ruler, textview);
+          changeButtonFetchSeatList, labelSeatList, linkServerTV, ruler, seatListStatus, textview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
