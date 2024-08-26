@@ -1466,6 +1466,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -3074,7 +3075,6 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
-drawable baseline_lock_24
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3102,7 +3102,6 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
-drawable del_button
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3113,7 +3112,6 @@ drawable googleg_standard_color_18
 drawable ic_android_black_24dp
 drawable ic_arrow_back_black_24
 drawable ic_arrow_down_24dp
-drawable ic_back
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -3126,9 +3124,10 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_patse
 drawable ic_search_black_24
+drawable ic_setting
 drawable ic_white_back
-drawable light
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3202,6 +3201,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable preference_list_divider_material
+drawable round_edit_text
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3276,6 +3276,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_button
 id adjust_height
 id adjust_width
 id alertTitle
@@ -3297,6 +3298,7 @@ id autoCompleteToEnd
 id autoCompleteToStart
 id back
 id backButton
+id back_button
 id barcodeRawValue
 id barrier
 id baseline
@@ -3312,8 +3314,7 @@ id bounceStart
 id btHuy
 id btXacNhan
 id buttonPanel
-id button_DS_Sinh_Vien
-id button_Quet
+id button_quet
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3326,6 +3327,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id change_button
 id checkbox
 id checked
 id chronometer
@@ -3387,6 +3389,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextText
 id edit_query
 id elastic
 id embed
@@ -3434,6 +3437,7 @@ id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id horizontal_ruler
 id icon
 id icon_frame
 id icon_group
@@ -3442,12 +3446,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageButton
 id immediateStop
 id included
 id indeterminate
 id info
-id info_sv
 id invisible
 id inward
 id italic
@@ -3464,12 +3466,10 @@ id light
 id line1
 id line3
 id linear
-id linearLayout
+id linkServerTV
 id listMode
 id list_item
-id listview_ds_sinh_vien
 id locale
-id lop
 id ltr
 id m3_side_sheet
 id marquee
@@ -3508,7 +3508,6 @@ id month_navigation_next
 id month_navigation_previous
 id month_title
 id motion_base
-id mssv
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -3580,6 +3579,7 @@ id parentPanel
 id parentRelative
 id parent_matrix
 id password_toggle
+id paste_button
 id path
 id pathRelative
 id peekHeight
@@ -3608,6 +3608,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id ruler
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3634,6 +3635,7 @@ id seekbar_value
 id select_dialog_listview
 id selected
 id selection_type
+id setting_button
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3651,6 +3653,7 @@ id snackbar_text
 id snap
 id snapMargins
 id south
+id space
 id spacer
 id special_effects_controller_view_tag
 id spinner
@@ -3706,6 +3709,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textview
 id time
 id title
 id titleDividerNoCustom
@@ -3866,6 +3870,8 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_barcode_scanner
+layout activity_menu
+layout activity_setting
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3882,11 +3888,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout dialog_xac_nhan_them_sv
-layout ds_sinh_vien
+layout dialog_change_link_server
+layout dialog_confirm
 layout expand_button
 layout image_frame
-layout info_sv_row
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3906,7 +3911,6 @@ layout material_time_input
 layout material_timepicker
 layout material_timepicker_dialog
 layout material_timepicker_textinput_display
-layout menu
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -4044,9 +4048,12 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string h_y
 string hide_bottom_view_on_scroll_behavior
+string http
 string icon_content_description
 string item_view_role_description
+string link_server
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -4149,7 +4156,10 @@ string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nh_p_link_server
 string not_set
+string nothing
+string ok
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4157,6 +4167,8 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string preference_copied
 string project_id
+string qu_t
+string s_a
 string scanned_code_result_label
 string search_menu_title
 string searchbar_scrolling_view_behavior
@@ -4167,7 +4179,10 @@ string side_sheet_behavior
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string th_m_th_ng_tin_sinh_vi_n
+string th_m_th_ng_tin_sinh_vi_n_nxxxxxxxx
+string tho_t
 string title_activity_barcode_scanning
+string todo
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat

@@ -5,10 +5,21 @@
     <string name="title_activity_barcode_scanning">Scan Barcode</string>
 
     <!-- Misc Labels & Texts -->
-    <string name="scanned_code_result_label">Scan Result:</string>
+    <string name="scanned_code_result_label">Mã vừa quét:</string>
     <string name="back_button_accessible_text" />
-    <string name="th_m_th_ng_tin_sinh_vi_n">Thêm thông tin sinh viên\n</string>
+    <string name="th_m_th_ng_tin_sinh_vi_n">MSSV vừa quét là:\n</string>
     <string name="_22665261">22665261</string>
     <string name="dnktpm18">DNKTPM18</string>
+    <string name="th_m_th_ng_tin_sinh_vi_n_nxxxxxxxx">MSSV vừa quét là:\nXXXXXXXX</string>
+    <string name="qu_t">Quét mã vạch</string>
+    <string name="todo">TODO</string>
+    <string name="link_server">Link server:</string>
+    <string name="http">http://</string>
+    <string name="s_a">sửa</string>
+    <string name="tho_t">Thoát</string>
+    <string name="nothing">nothing\n</string>
+    <string name="nh_p_link_server">Nhập link server</string>
+    <string name="ok">OK</string>
+    <string name="h_y">Hủy</string>
 
 </resources>

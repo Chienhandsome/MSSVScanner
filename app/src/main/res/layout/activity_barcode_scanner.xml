@@ -18,9 +18,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+    </androidx.camera.view.PreviewView>
 
-    <com.zeeshanelahi.barcodescannerandcameraxdemo.barcodescanner.GraphicOverlay
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="#00000000"
+        android:backgroundTint="#9EFFFFFF"
+        android:contentDescription="@string/nothing"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="centerCrop"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:src="@drawable/ic_white_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <com.zeeshanelahi.barcodescannerandcameraxdemo.model.barcodescanner.GraphicOverlay
         android:id="@+id/graphic_overlay"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -59,30 +77,5 @@
             android:text="" />
 
     </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:background="#00000000"
-            android:backgroundTint="#9EFFFFFF"
-            android:hapticFeedbackEnabled="true"
-            android:scaleType="centerCrop"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:src="@drawable/ic_white_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

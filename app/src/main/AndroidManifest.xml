@@ -23,9 +23,8 @@
             android:value="@integer/google_play_services_version"/>
 
         <activity
-            android:name=".Menu"
-            android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:name=".view.MenuActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -33,11 +32,11 @@
         </activity>
 
         <activity
-            android:name=".BarcodeScannerActivity">
+            android:name=".view.BarcodeScannerActivity">
         </activity>
 
         <activity
-            android:name=".DanhSachSV">
+            android:name=".view.SettingActivity">
         </activity>
     </application>
 </manifest>
