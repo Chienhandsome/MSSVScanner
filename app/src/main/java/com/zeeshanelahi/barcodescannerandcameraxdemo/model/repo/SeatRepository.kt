@@ -34,8 +34,8 @@ class SeatRepository(private val context: Context) {
     }
 
     private fun fetchSeatData(callback: (List<Seat>) -> Unit) {
+
         val url = ApiFactory.createApi(ApiEndpoint.GET_SEATS, context)
-        //val url = "https://nodejs-ggsheet-7eadcecf0f62.herokuapp.com/all-mssv-seats"
         Log.d(TAG, "fetchSeatData: url: $url")
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET,

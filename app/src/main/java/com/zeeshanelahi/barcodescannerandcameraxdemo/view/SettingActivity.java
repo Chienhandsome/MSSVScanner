@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ public class SettingActivity extends AppCompatActivity {
         viewBinding = ActivitySettingBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
 
-        viewBinding.linkServerTV.setText(SharedPreferencesHelper.getInstance(this).getString(StringValue.LINK_SERVER_KEY, StringValue.LINK_SERVER_DEFAULT));
+        viewBinding.linkServerTV.setText(SharedPreferencesHelper.getInstance(this).getString(StringValue.LINK_SERVER_KEY, StringValue.LINK_SERVER_VALUE_DEFAULT));
         setUpViewEvents();
 
         seatRepository = new SeatRepository(this);
@@ -96,5 +97,6 @@ public class SettingActivity extends AppCompatActivity {
     void onChangeServerLink(String link) {
         viewBinding.linkServerTV.setText(link);
         SharedPreferencesHelper.getInstance(this).saveString(StringValue.LINK_SERVER_KEY, link);
+        Log.d(TAG, "onChangeServerLink: " + link);
     }
 }

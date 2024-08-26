@@ -60,12 +60,15 @@ public class MenuActivity extends AppCompatActivity {
         dialog.setContentView(dialogBinding.getRoot());
         dialog.show();
 
+
         dialogBinding.cancelButton.setOnClickListener(v -> {
             dialog.dismiss();
         });
 
         dialogBinding.addButton.setOnClickListener(v -> {
             String mssv = dialogBinding.editTextText.getText().toString();
+            seatRepository = new SeatRepository(this);
+            String seatInfo = seatRepository.getSeatInfo(mssv);
             if (mssv.isEmpty()){
                 Toast.makeText(this, "Vui lòng nhập mã số sinh viên", Toast.LENGTH_SHORT).show();
             }

@@ -15,7 +15,7 @@ object ApiFactory {
              domain =
                  SharedPreferencesHelper
                 .getInstance(context)
-                .getString(StringValue.LINK_SERVER_KEY, StringValue.LINK_SERVER_DEFAULT)
+                .getString(StringValue.LINK_SERVER_KEY, StringValue.LINK_SERVER_VALUE_DEFAULT)
         }
         return domain ?: throw IllegalStateException("Domain is not initialized. Call ApiFactory.init(context) first.")
     }
