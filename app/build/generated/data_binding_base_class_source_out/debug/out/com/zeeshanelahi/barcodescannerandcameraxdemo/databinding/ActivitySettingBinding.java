@@ -30,6 +30,9 @@ public final class ActivitySettingBinding implements ViewBinding {
   public final Button changeButtonFetchSeatList;
 
   @NonNull
+  public final Button exportButton;
+
+  @NonNull
   public final TextView labelSeatList;
 
   @NonNull
@@ -46,12 +49,13 @@ public final class ActivitySettingBinding implements ViewBinding {
 
   private ActivitySettingBinding(@NonNull ConstraintLayout rootView, @NonNull Button backButton,
       @NonNull Button changeButton, @NonNull Button changeButtonFetchSeatList,
-      @NonNull TextView labelSeatList, @NonNull TextView linkServerTV, @NonNull View ruler,
-      @NonNull TextView seatListStatus, @NonNull TextView textview) {
+      @NonNull Button exportButton, @NonNull TextView labelSeatList, @NonNull TextView linkServerTV,
+      @NonNull View ruler, @NonNull TextView seatListStatus, @NonNull TextView textview) {
     this.rootView = rootView;
     this.backButton = backButton;
     this.changeButton = changeButton;
     this.changeButtonFetchSeatList = changeButtonFetchSeatList;
+    this.exportButton = exportButton;
     this.labelSeatList = labelSeatList;
     this.linkServerTV = linkServerTV;
     this.ruler = ruler;
@@ -104,6 +108,12 @@ public final class ActivitySettingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.export_button;
+      Button exportButton = ViewBindings.findChildViewById(rootView, id);
+      if (exportButton == null) {
+        break missingId;
+      }
+
       id = R.id.label_seat_list;
       TextView labelSeatList = ViewBindings.findChildViewById(rootView, id);
       if (labelSeatList == null) {
@@ -135,7 +145,8 @@ public final class ActivitySettingBinding implements ViewBinding {
       }
 
       return new ActivitySettingBinding((ConstraintLayout) rootView, backButton, changeButton,
-          changeButtonFetchSeatList, labelSeatList, linkServerTV, ruler, seatListStatus, textview);
+          changeButtonFetchSeatList, exportButton, labelSeatList, linkServerTV, ruler,
+          seatListStatus, textview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

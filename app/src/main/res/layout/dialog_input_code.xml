@@ -32,7 +32,7 @@
             android:background="@drawable/round_edit_text"
             android:ems="10"
             android:hint="@string/nh_p_mssv"
-            android:inputType="text"
+            android:inputType="number"
             android:paddingStart="18dp"
             android:paddingEnd="18dp"
             android:textColor="#FFFFFF"

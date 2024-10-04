@@ -31,6 +31,7 @@ import com.google.mlkit.common.MlKitException;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
@@ -68,7 +69,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
     private static final String STATE_SELECTED_MODEL = "selected_model";
     private static final String STATE_LENS_FACING = "lens_facing";
     private SeatRepository seatRepository;
-    private MssvQueueManager mssvQueueManager;
+    //private MssvQueueManager mssvQueueManager;
     private SendMessageCallback callback = new SendMessageCallback() {
         @Override
         public void onMessageSentSucced() {
@@ -76,8 +77,8 @@ public class BarcodeScannerActivity extends AppCompatActivity
 
         @Override
         public void onMessageFailed(String mssv) {
-            mssvQueueManager.addMssvToQueue(mssv);
-
+            //mssvQueueManager.addMssvToQueue(mssv);
+            MssvQueueManager.Companion.getInstance(BarcodeScannerActivity.this).addMssvToQueue(mssv);
         }
     };
     @Override
@@ -92,7 +93,7 @@ public class BarcodeScannerActivity extends AppCompatActivity
         binding = ActivityBarcodeScannerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mssvQueueManager = new MssvQueueManager(this);
+        //mssvQueueManager = new MssvQueueManager(this);
 
         new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()))
                 .get(CameraXViewModel.class)
@@ -314,40 +315,34 @@ public class BarcodeScannerActivity extends AppCompatActivity
         Button btHuy = dialog.findViewById(R.id.btHuy);
         TextView message = dialog.findViewById(R.id.message);
 
-        seatRepository = new SeatRepository(this);
-        String seatInfo = seatRepository.getSeatInfo(mssv);
-        boolean isReadyTosend;
+//        seatRepository = new SeatRepository(this);
+//        String seatInfo = seatRepository.getSeatInfo(mssv);
+//        boolean isReadyTosend;
 
-        if (seatInfo == null) {
-            isReadyTosend = false;
-            message.setText("N/A\n"+mssv);
-            message.setBackgroundColor(Color.YELLOW);
-        } else if (seatInfo.isEmpty()) {
-            isReadyTosend = false;
-            message.setText("Not Found\n"+mssv);
-            message.setBackgroundColor(Color.RED);
-        } else {
-            message.setText(seatInfo+"\n"+mssv);
-            message.setBackgroundColor(Color.GREEN);
-            isReadyTosend = true;
-        }
+//        if (seatInfo == null) {
+//            isReadyTosend = false;
+//            message.setText("N/A\n"+mssv);
+//            message.setBackgroundColor(Color.YELLOW);
+//        } else if (seatInfo.isEmpty()) {
+//            isReadyTosend = false;
+//            message.setText("Not Found\n"+mssv);
+//            message.setBackgroundColor(Color.RED);
+//        } else {
+//            message.setText(seatInfo+"\n"+mssv);
+//            message.setBackgroundColor(Color.GREEN);
+//            isReadyTosend = true;
+//        }
 
         dialog.show();
 
         btXacNhan.setOnClickListener(view -> {
-            if (isReadyTosend ){
+//            if (isReadyTosend){
                 if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)){
-                    try {
-                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv, callback);
-                    } catch (JSONException e) {
-                        Toast.makeText(BarcodeScannerActivity.this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "dialogConfirm: " + e.getMessage());
-                    }
+                    onConnectToInternet(mssv);
                 } else {
-                    Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
-                    mssvQueueManager.addMssvToQueue(mssv);
+                    onCannotConnectToInternet(mssv);
                 }
-            }
+//            }
             dialogIsShowing = false;
             dialog.dismiss();
         });
@@ -356,5 +351,19 @@ public class BarcodeScannerActivity extends AppCompatActivity
             dialogIsShowing = false;
             dialog.dismiss();
         });
+    }
+
+    private void onConnectToInternet(String mssv) {
+        try {
+            ServerInteractor.getInstance(this).sendMessageToServer(this, mssv, callback);
+        } catch (JSONException e) {
+            Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "dialogConfirm: " + e.getMessage());
+        }
+    }
+
+    private void onCannotConnectToInternet(String mssv) {
+        Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
+        MssvQueueManager.Companion.getInstance(BarcodeScannerActivity.this).addMssvToQueue(mssv);
     }
 }

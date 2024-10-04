@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -22,20 +19,19 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogInputCode
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.WaitingQueue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.StringHandler;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 
-public class MenuActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class MenuActivity extends AppCompatActivity  implements Serializable {
     private String TAG = "MenuActivity";
     private ActivityMenuBinding viewBinding;
-    private SeatRepository seatRepository;
-    private long delayTime = 5000;
-    private MssvQueueManager mssvQueueManager;
+    //private SeatRepository seatRepository;
+
     private SendMessageCallback callback = new SendMessageCallback() {
         @Override
         public void onMessageSentSucced() {
@@ -43,7 +39,8 @@ public class MenuActivity extends AppCompatActivity {
 
         @Override
         public void onMessageFailed(String mssv) {
-            mssvQueueManager.addMssvToQueue(mssv);
+//            mssvQueueManager.addMssvToQueue(mssv);
+            MssvQueueManager.Companion.getInstance(MenuActivity.this).addMssvToQueue(mssv);
             String queue = SharedPreferencesHelper.getInstance(MenuActivity.this).getString("mssv_queue", " ");
             viewBinding.queueTv.setText(queue);
         }
@@ -57,22 +54,20 @@ public class MenuActivity extends AppCompatActivity {
         InternetBroadCastReceiver.getInstance().activeBroadCast(this);
         setUpviewEvents();
 
-        mssvQueueManager = new MssvQueueManager(this);
+        //mssvQueueManager = new MssvQueueManager(this);
 
-        seatRepository = new SeatRepository(this);
-        seatRepository.loadSeats(seats -> {
-            Log.d(TAG, "onCreate: "+ seats);
-            return null;
-        });
-
-
-//        selfCheck();
+//        seatRepository = new SeatRepository(this);
+//        seatRepository.loadSeats(seats -> {
+//            Log.d(TAG, "onCreate: "+ seats);
+//            return null;
+//        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        viewBinding.queueTv.setText(SharedPreferencesHelper.getInstance(MenuActivity.this).getString("mssv_queue", " "));
+        String queue = SharedPreferencesHelper.getInstance(this).getString("mssv_queue", " ");
+        viewBinding.queueTv.setText(StringHandler.formatString(queue));
     }
 
     private void setUpviewEvents() {
@@ -89,7 +84,8 @@ public class MenuActivity extends AppCompatActivity {
         viewBinding.buttonNhapMa.setOnClickListener(v -> showInputMSSVDialog());
         viewBinding.pushQueueButton.setOnClickListener(v -> {
             if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(MenuActivity.this)){
-                mssvQueueManager.processQueue();
+//                mssvQueueManager.processQueue();
+                MssvQueueManager.Companion.getInstance(MenuActivity.this).processQueue();
                 SharedPreferencesHelper.getInstance(this).removeValue("mssv_queue");
                 viewBinding.queueTv.setText("");
             }
@@ -109,35 +105,43 @@ public class MenuActivity extends AppCompatActivity {
 
         dialogBinding.addButton.setOnClickListener(v -> {
             String mssv = dialogBinding.editTextText.getText().toString();
-            seatRepository = new SeatRepository(this);
-            String seatInfo = seatRepository.getSeatInfo(mssv);
+//            seatRepository = new SeatRepository(this);
+//            String seatInfo = seatRepository.getSeatInfo(mssv);
 
             if (mssv.isEmpty()){
                 Toast.makeText(this, "Vui lòng nhập mã số sinh viên", Toast.LENGTH_SHORT).show();
             }
             else if (!DataChecker.isMSSV(mssv)) {
                 Toast.makeText(this, "Mã số sinh viên không hợp lệ !", Toast.LENGTH_SHORT).show();
-            } else if (seatInfo != null){
+            } else /*if (seatInfo != null)*/ {
                 if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(this)){
-                    try {
-                        ServerInteractor.getInstance(this).sendMessageToServer(this, mssv, callback);
-                    } catch (JSONException e) {
-                        Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "dialogConfirm: " + e.getMessage());
-                    }
-
-                    dialogBinding.seatTv.setText(seatInfo);
-                    dialogBinding.addButton.setOnClickListener(v1 -> dialog.dismiss());
+                    conConnectToInternet(mssv);
+                    //dialogBinding.seatTv.setText(seatInfo);
+                    //dialogBinding.addButton.setOnClickListener(v1 -> dialog.dismiss());
+                    dialog.dismiss();
                 } else {
-                    Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
-                    mssvQueueManager.addMssvToQueue(mssv);
-                    //lay data tu shared preferences
-                    String queue = SharedPreferencesHelper.getInstance(this).getString("mssv_queue", " ");
-                    viewBinding.queueTv.setText(queue);
+                    onCannotConnectToInternet(mssv);
                     dialog.dismiss();
                 }
             }
         });
+    }
+
+    private void conConnectToInternet(String mssv) {
+        try {
+            ServerInteractor.getInstance(this).sendMessageToServer(this, mssv, callback);
+        } catch (JSONException e) {
+            Toast.makeText(this, "Failed to send message "+e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "dialogConfirm: " + e.getMessage());
+        }
+    }
+
+    private void onCannotConnectToInternet(String mssv) {
+        Toast.makeText(this, "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
+        MssvQueueManager.Companion.getInstance(MenuActivity.this).addMssvToQueue(mssv);
+        //lay data tu shared preferences
+        String queue = SharedPreferencesHelper.getInstance(this).getString("mssv_queue", " ");
+        viewBinding.queueTv.setText(StringHandler.formatString(queue));
     }
 
     private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
@@ -149,21 +153,4 @@ public class MenuActivity extends AppCompatActivity {
                 }
             }
     );
-
-    private void selfCheck() {
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(MenuActivity.this)){
-                    try {
-                        WaitingQueue.getInstance().submit(MenuActivity.this);
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-                handler.postDelayed(this, delayTime);
-            }
-        }, 1000);
-    }
 }

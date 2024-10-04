@@ -3412,6 +3412,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id export_button
 id fade
 id fill
 id fillCenter
@@ -4035,6 +4036,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string c_p_nh_t
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -4218,6 +4220,7 @@ string title_activity_barcode_scanning
 string todo
 string v7_preference_off
 string v7_preference_on
+string xu_t_data
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

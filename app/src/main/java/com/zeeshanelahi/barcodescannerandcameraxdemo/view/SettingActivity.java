@@ -1,5 +1,6 @@
 package com.zeeshanelahi.barcodescannerandcameraxdemo.view;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -17,6 +18,8 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.DialogChangeLin
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
+
+import org.json.JSONArray;
 
 import java.util.Objects;
 
@@ -48,7 +51,7 @@ public class SettingActivity extends AppCompatActivity {
 
     private void setUpViewEvents() {
         viewBinding.backButton.setOnClickListener(v -> finish());
-        viewBinding.changeButton.setOnClickListener(v -> displayDialog());
+        viewBinding.changeButton.setOnClickListener(v -> displayChangingLinkDialog());
         viewBinding.linkServerTV.setOnLongClickListener(v -> {
             String link = viewBinding.linkServerTV.getText().toString();
             if (link.isEmpty()) {
@@ -66,9 +69,10 @@ public class SettingActivity extends AppCompatActivity {
             return null;
             });
         });
+        viewBinding.exportButton.setOnClickListener(v -> displayConfirmDialog());
     }
 
-    private void displayDialog() {
+    private void displayChangingLinkDialog() {
         Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         DialogChangeLinkServerBinding dialogBinding = DialogChangeLinkServerBinding.inflate(getLayoutInflater());
@@ -91,6 +95,25 @@ public class SettingActivity extends AppCompatActivity {
             dialogBinding.editTextText.setText("");
             dialogBinding.editTextText.setText(getClipboardContent());
         });
+    }
+
+    private void displayConfirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Xuất data");
+        builder.setMessage("Bạn có chắc chắn muốn xuất data không?");
+        builder.setPositiveButton("Có", (dialog, which) -> {
+            exportData();
+            dialog.dismiss();
+        });
+        builder.setNegativeButton("Không", (dialog, which) -> dialog.dismiss());
+        builder.show();
+    }
+
+    private void exportData() {
+        String successQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.SUCCES_QUEUE_KEY, "");
+        Log.d(TAG, "exportData Success Queue: " + successQueue);
+        String failQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.WAITNG_QUEUE_KEY, "");
+        Log.d(TAG, "exportData Fail Queue: " + failQueue);
     }
 
     private String getClipboardContent() {

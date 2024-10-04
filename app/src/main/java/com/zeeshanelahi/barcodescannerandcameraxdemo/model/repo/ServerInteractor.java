@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiEndpoint;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.ApiFactory;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.StringHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,9 +71,12 @@ public class ServerInteractor {
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonBody,
                 response -> {
-                    // Handle response from server
-                    //JSONArray jsonArray = response.optJSONArray("validMssv");
-                    Toast.makeText(context, "Gửi thành công !", Toast.LENGTH_SHORT).show();
+                    try {
+                        String respnseMessage = response.getString("message");
+                        Toast.makeText(context, respnseMessage, Toast.LENGTH_SHORT).show();
+                    } catch (JSONException e) {
+                        Log.e(TAG, "get response error: ",e );
+                    }
                 },
                 error -> {
                     String errorMessage = error.getMessage();

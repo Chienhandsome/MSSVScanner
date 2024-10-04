@@ -39,11 +39,12 @@
         android:id="@+id/push_queue_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/queue_label"
-        app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="#000000"
+        android:text="GỬI"
         android:textColor="#0069BC"
-        android:text="GỬI"/>
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/queue_label" />
 
     <ImageView
         android:id="@+id/setting_button"

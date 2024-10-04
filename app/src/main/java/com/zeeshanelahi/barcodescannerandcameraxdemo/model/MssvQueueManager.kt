@@ -6,6 +6,7 @@ import android.os.Looper
 import android.util.Log
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue
 import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.math.log
@@ -15,6 +16,17 @@ class MssvQueueManager(val context: Context) {
     private val successQueue: MutableMap<String, Boolean> = mutableMapOf()
     private val handler = Handler(Looper.getMainLooper())
     private lateinit var sharedPreferencesHelper: SharedPreferencesHelper
+
+    companion object {
+        @Volatile
+        private var INSTANCE: MssvQueueManager? = null
+
+        fun getInstance(context: Context): MssvQueueManager {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: MssvQueueManager(context).also { INSTANCE = it }
+            }
+        }
+    }
 
     private val callback = object : SendMessageCallback {
 
@@ -86,7 +98,7 @@ class MssvQueueManager(val context: Context) {
             }
             jsonArray.put(jsonObject)
         }
-        sharedPreferencesHelper.saveString("mssv_queue", jsonArray.toString())
+        sharedPreferencesHelper.saveString(StringValue.WAITNG_QUEUE_KEY, jsonArray.toString())
     }
 
     // Backup successQueue to disk
@@ -99,7 +111,7 @@ class MssvQueueManager(val context: Context) {
             }
             jsonArray.put(jsonObject)
         }
-        sharedPreferencesHelper.saveString("mssv_success_queue", jsonArray.toString())
+        sharedPreferencesHelper.saveString(StringValue.SUCCES_QUEUE_KEY, jsonArray.toString())
     }
 
     private fun syncQueueWithMemory() {

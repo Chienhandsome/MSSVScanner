@@ -31,12 +31,12 @@ public class WaitingQueue {
     };
 
     private static WaitingQueue instance;
-    public static synchronized WaitingQueue getInstance() {
-        if (instance == null) {
-            instance = new WaitingQueue();
-        }
-        return instance;
-    }
+//    public static synchronized WaitingQueue getInstance() {
+//        if (instance == null) {
+//            instance = new WaitingQueue();
+//        }
+//        return instance;
+//    }
 
     private WaitingQueue(){
         waitingQueue = new HashMap<>();
