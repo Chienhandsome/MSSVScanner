@@ -5,4 +5,5 @@
 
     <color name="colorSecondary">#000000</color>
     <color name="colorBackgroundSecondary">#FFFFFF</color>
+    <color name="dark_grey_30">#4D212427</color>
 </resources>
