@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityMenuBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.view.main.OnFragmentChangeListener;
 
 import java.io.Serializable;
 
@@ -20,6 +22,8 @@ public class MenuFragment extends Fragment implements Serializable {
     private String TAG = "MenuActivity";
     private ActivityMenuBinding viewBinding;
     private Context context;
+    private OnFragmentChangeListener fragmentChangeListener;
+
     //private SeatRepository seatRepository;
 
     private SendMessageCallback callback = new SendMessageCallback() {
@@ -51,17 +55,38 @@ public class MenuFragment extends Fragment implements Serializable {
         viewBinding = ActivityMenuBinding.bind(view);
         context = getContext();
 
+        setUpviewEvents();
+
         return view;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentChangeListener) {
+            fragmentChangeListener = (OnFragmentChangeListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement OnFragmentChangeListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        fragmentChangeListener = null;
     }
 
     private void setUpviewEvents() {
         viewBinding.buttonQuet.setOnClickListener(v -> {
-            //showDialog();
+            if (fragmentChangeListener != null) {
+                fragmentChangeListener.onChangeFragment(StringValue.SCAN_FRAGMENT);
+            }
         });
 
         viewBinding.buttonNhapMa.setOnClickListener(v -> {
-            //showDialogInputCode();
+            if (fragmentChangeListener != null) {
+                fragmentChangeListener.onChangeFragment(StringValue.INPUT_FRAGMENT);
+            }
         });
     }
-
 }
