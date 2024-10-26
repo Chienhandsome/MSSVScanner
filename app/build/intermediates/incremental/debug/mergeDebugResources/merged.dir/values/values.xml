@@ -2207,7 +2207,7 @@
     </string>
     <string name="project_id" translatable="false">mssvscanner</string>
     <string name="qu_t">Quét mã</string>
-    <string name="queue_list">Queue List:</string>
+    <string name="queue_list">Queue List</string>
     <string name="s_a">sửa</string>
     <string name="scan">Scan</string>
     <string name="scanned_code_result_label">Mã vừa quét:</string>

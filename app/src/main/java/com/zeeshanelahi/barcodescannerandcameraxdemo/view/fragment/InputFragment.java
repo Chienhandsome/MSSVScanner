@@ -20,7 +20,16 @@ public class InputFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(null, container, false);
+        View view = inflater.inflate(R.layout.fragment_input_code, container, false);
+        setUpViewEvents();
         return view;
+    }
+
+    private void setUpViewEvents() {
+
+    }
+
+    //constructor
+    public InputFragment() {
     }
 }

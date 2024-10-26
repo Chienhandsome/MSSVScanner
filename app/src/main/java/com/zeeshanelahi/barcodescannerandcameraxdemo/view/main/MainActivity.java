@@ -11,7 +11,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityContainerBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.InputFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.MenuFragment;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.QueueListFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.ScanFragment;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentChangeListener {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewBinding = ActivityContainerBinding.inflate(getLayoutInflater());
+        //tat action bar
+        getSupportActionBar().hide();
         setContentView(viewBinding.getRoot());
         setUpViewEvents();
 
@@ -71,13 +75,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
         fragmentManager = getSupportFragmentManager();
         fragmentMenu = new MenuFragment();
         fragmentScan = new ScanFragment();
-//        fragmentInput = new InputFragment();
-//        fragmentQueue = new QueueFragment();
+        fragmentInput = new InputFragment();
+        fragmentQueue = new QueueListFragment();
 
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentMenu, "fragmentMenu").commit();
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentScan, "fragmentScan").hide(fragmentScan).commit();
-//        fragmentManager.beginTransaction().add(R.id.main_container, fragmentInput, "fragmentInput").hide(fragmentInput).commit();
-//        fragmentManager.beginTransaction().add(R.id.main_container, fragmentQueue, "fragmentQueue").hide(fragmentQueue).commit();
+        fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentInput, "fragmentInput").hide(fragmentInput).commit();
+        fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentQueue, "fragmentQueue").hide(fragmentQueue).commit();
 
         activeFragment = fragmentMenu;
     }

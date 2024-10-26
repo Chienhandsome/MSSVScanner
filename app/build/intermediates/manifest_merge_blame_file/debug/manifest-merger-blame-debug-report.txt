@@ -83,8 +83,8 @@
 46
 47        <activity
 47-->D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:25:9-32:20
-48            android:name="com.zeeshanelahi.barcodescannerandcameraxdemo.view.MainActivity"
-48-->D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:26:13-46
+48            android:name="com.zeeshanelahi.barcodescannerandcameraxdemo.view.main.MainActivity"
+48-->D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:26:13-51
 49            android:exported="true" >
 49-->D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:27:13-36
 50            <intent-filter>

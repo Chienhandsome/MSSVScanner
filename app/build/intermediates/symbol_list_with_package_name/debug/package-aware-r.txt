@@ -3217,7 +3217,9 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable preference_list_divider_material
 drawable rounded_button
+drawable rounded_button_background
 drawable rounded_edit_text_input_code
+drawable rounded_edit_text_input_code_on_fail
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3335,6 +3337,7 @@ id button_quet
 id cache_measures
 id callMeasure
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id centerCrop
@@ -3577,6 +3580,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notify_tv
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3627,6 +3631,7 @@ id queue_tv
 id radio
 id ratio
 id rectangles
+id recyclerView
 id recycler_view
 id report_drawn
 id resultContainer
@@ -3635,6 +3640,7 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id rl
 id rounded
 id row_index_key
 id rtl
@@ -3733,6 +3739,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3924,10 +3931,13 @@ layout dialog_change_link_server
 layout dialog_confirm
 layout dialog_input_code
 layout expand_button
+layout fragment_input_code
+layout fragment_queue_list
 layout fragment_scan
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_mssv
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
