@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/scan_qr_code"
+        android:icon="@drawable/ic_black_barcode_scanner"
+        android:title="@string/scan" />
+
+    <item
+        android:id="@+id/input_mssv"
+        android:icon="@drawable/ic_keyboard"
+        android:title="@string/input" />
+
+    <item
+        android:id="@+id/queue_list"
+        android:icon="@drawable/ic_queue"
+        android:title="@string/queue_list" />
+</menu>

@@ -4,25 +4,6 @@
             "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\eb57d0d367a02f440f8ac027b04321e5\\transformed\\jetified-camera-camera2-1.0.0-beta04\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "13",
-                        "endOffsets": "207"
-                    },
-                    "to": {
-                        "startLines": "21",
-                        "startColumns": "4",
-                        "startOffsets": "1668",
-                        "endLines": "23",
-                        "endColumns": "13",
-                        "endOffsets": "1820"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\b3d4205297feea018d39796eb613afc6\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
@@ -58,6 +39,25 @@
                         "endLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,24,25,26,27,88,89,90,91,93,94,97,100,103,198,201,204,207,213,216,219,286,287,290,295,306,312,369,378,387,396,405,414,423,432,441,450,459,468,477,486,495,501,507,513,519,523,527,528,529,530,534,537,540,543,546,555,558,561,565,569,572",
                         "endColumns": "97,95,95,97,67,78,87,87,87,87,86,86,86,86,95,89,95,89,92,106,104,118,124,120,10,10,10,10,10,10,10,10,10,10,10,115,10,12,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,137,143,155,10,10,10,10,10,109,10,10,10,10,10",
                         "endOffsets": "266,362,458,556,624,703,791,879,967,1055,1142,1229,1316,1403,1916,2006,2102,2192,7652,7759,7864,7983,8211,8332,8545,8804,9075,15203,15435,15671,15921,16333,16542,16773,21530,21646,21816,22137,23166,23623,27109,27617,28126,28640,29145,29649,30154,30660,31162,31668,32177,32685,33184,33691,34199,34491,34785,35085,35385,35714,36055,36193,36337,36493,36886,37104,37326,37552,37768,38402,38572,38762,39003,39262,39439"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\baccafcff5bb8765ccd81976b9f60bf9\\transformed\\jetified-camera-camera2-1.0.2\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "13",
+                        "endOffsets": "207"
+                    },
+                    "to": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "1668",
+                        "endLines": "23",
+                        "endColumns": "13",
+                        "endOffsets": "1820"
                     }
                 },
                 {

@@ -11,7 +11,7 @@
     <string name="_22665261">22665261</string>
     <string name="dnktpm18">DNKTPM18</string>
     <string name="th_m_th_ng_tin_sinh_vi_n_nxxxxxxxx">MSSV vừa quét là:\nXXXXXXXX</string>
-    <string name="qu_t">Quét mã vạch</string>
+    <string name="qu_t">Quét mã</string>
     <string name="todo">TODO</string>
     <string name="link_server">Link server:</string>
     <string name="http">http://</string>
@@ -21,10 +21,15 @@
     <string name="nh_p_link_server">Nhập link server</string>
     <string name="ok">OK</string>
     <string name="h_y">Hủy</string>
-    <string name="nh_p_mssv">Nhập MSSV</string>
+    <string name="nh_p_mssv">Nhập mã</string>
     <string name="seat_list">Seat List:</string>
     <string name="queue_list">Queue List:</string>
     <string name="xu_t_data">Xuất data</string>
     <string name="c_p_nh_t">CẬP NHẬT</string>
+    <string name="home">Home</string>
+    <string name="scan">Scan</string>
+    <string name="input">Input</string>
+    <string name="a_th_v_ph_a_camera">Đưa thẻ về phía camera</string>
+    <string name="emty_cd">emty_cd</string>
 
 </resources>

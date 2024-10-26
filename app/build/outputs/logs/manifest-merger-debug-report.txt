@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-42:12
-INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Windows\.gradle\caches\transforms-3\3aa0cd7946cc6139548360ce886c7475\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.4] C:\Users\Windows\.gradle\caches\transforms-3\176617a087d75f7d15359490a0241f80\transformed\navigation-common-2.7.4\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.4] C:\Users\Windows\.gradle\caches\transforms-3\7b314cc63367bded2609bddb388fac1c\transformed\navigation-runtime-2.7.4\AndroidManifest.xml:17:1-22:12
@@ -12,7 +12,7 @@ MERGED from [androidx.navigation:navigation-ui:2.7.4] C:\Users\Windows\.gradle\c
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Windows\.gradle\caches\transforms-3\753331dddf5fb1cc70fe16dc8549e5b5\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Windows\.gradle\caches\transforms-3\c1e9fd41e4d8287f5018ebf58a991524\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\83ce211aa880fdde25ba9d272e9ebeae\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.camera:camera-view:1.0.0-alpha11] C:\Users\Windows\.gradle\caches\transforms-3\7b61358b0b7b527d12352a42bc3d8e35\transformed\jetified-camera-view-1.0.0-alpha11\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-view:1.0.0-alpha27] C:\Users\Windows\.gradle\caches\transforms-3\445704ecb631b0c8ffde656ff5f29b06\transformed\jetified-camera-view-1.0.0-alpha27\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Windows\.gradle\caches\transforms-3\c7b811d203f079b2eade360bb2118f28\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Windows\.gradle\caches\transforms-3\80ba2a5e79208e5d4b0ebf083db6695f\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.paging:paging-runtime:3.2.1] C:\Users\Windows\.gradle\caches\transforms-3\d39f531fb86ece7ca945b8aca5b506af\transformed\paging-runtime-3.2.1\AndroidManifest.xml:2:1-7:12
@@ -49,8 +49,9 @@ MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Wind
 MERGED from [androidx.fragment:fragment:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\ade252c5f0d3d8ad52d3e0f60573a28b\transformed\fragment-1.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\fdcec9c170bd7205216e417cb2ca0855\transformed\jetified-fragment-ktx-1.6.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:15:2-22:13
-MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.camera:camera-lifecycle:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\d8255f15b66acf7ae8dbb0c70991f04c\transformed\jetified-camera-lifecycle-1.0.0-beta04\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-camera2:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\baccafcff5bb8765ccd81976b9f60bf9\transformed\jetified-camera-camera2-1.0.2\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-lifecycle:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\12b20a0dfbdf0690f349a1624cf083b1\transformed\jetified-camera-lifecycle-1.0.2\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-core:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\c589be9b7b15bcb1233c1770d5f3e8ac\transformed\jetified-camera-core-1.0.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5fa1efc54168b727dc83b3c7e0e5cf24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\1ac40615595db905d075b72e9ce163ef\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.activity:activity-ktx:1.8.0] C:\Users\Windows\.gradle\caches\transforms-3\fab6c630606657dea13e7426dd3419ad\transformed\jetified-activity-ktx-1.8.0\AndroidManifest.xml:2:1-7:12
@@ -64,7 +65,6 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Window
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\c7ef1a876628e8aa90fd7065093438cf\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\4e1b4ee1289741b1ad1e96324bf48bab\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Windows\.gradle\caches\transforms-3\0cadcd5e124d1ab62d0375605aa1cfc1\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.camera:camera-core:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\523408c66614d014d24e8706cb3cdf56\transformed\jetified-camera-core-1.0.0-beta04\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\a692c6bfc5de5d7982b6ab1a685642bf\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\Windows\.gradle\caches\transforms-3\1d80f7cec872a7642721cd4d732824da\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\151c4bfcfa8d6bd4066b0c73600f976f\transformed\jetified-window-1.0.0\AndroidManifest.xml:17:1-33:12
@@ -90,6 +90,7 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\Windows
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\32b6076b2d5fd34f5bfa6dd4de14451b\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\605ac935fe4572ddea84e391405dd58c\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\de55e8f84e1d7a7116b100d3818b2a0f\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Windows\.gradle\caches\transforms-3\269777a23a471590ef64dc091d33ebb1\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:15:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Windows\.gradle\caches\transforms-3\9600781f9e263e27e6861e2e284179cf\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Windows\.gradle\caches\transforms-3\c1f9fa8e18f836ed1823028668b1376c\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
@@ -98,7 +99,6 @@ MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Windows\.gradle\caches\tra
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\b85bc51fb872597b753482c5b25a0db7\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\48b1ccdfba6253ab16ba0fbb3b7b817a\transformed\jetified-transport-runtime-2.2.2\AndroidManifest.xml:15:1-41:12
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\0c39801e731dfe1dbd5656be0b5ce1c2\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\5be5cb507ccc684f799365f838449b07\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\fe6753e7bdd5a4b4f428d674e4ffd128\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -160,8 +160,8 @@ MERGED from [org.chromium.net:cronet-api:119.6045.31] C:\Users\Windows\.gradle\c
 	android:name
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:10:22-64
 application
-ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:12:5-41:19
-INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:12:5-41:19
+ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:12:5-37:19
+INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:12:5-37:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Windows\.gradle\caches\transforms-3\753331dddf5fb1cc70fe16dc8549e5b5\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\Windows\.gradle\caches\transforms-3\753331dddf5fb1cc70fe16dc8549e5b5\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Windows\.gradle\caches\transforms-3\c1e9fd41e4d8287f5018ebf58a991524\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -260,7 +260,7 @@ MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Wind
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:23:13-66
 	android:name
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:22:13-58
-activity#com.zeeshanelahi.barcodescannerandcameraxdemo.view.MenuActivity
+activity#com.zeeshanelahi.barcodescannerandcameraxdemo.view.MainActivity
 ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:25:9-32:20
 	android:exported
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:27:13-36
@@ -276,14 +276,10 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
 		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:30:27-74
-activity#com.zeeshanelahi.barcodescannerandcameraxdemo.view.BarcodeScannerActivity
+activity#com.zeeshanelahi.barcodescannerandcameraxdemo.view.SettingActivity
 ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:34:9-36:20
 	android:name
-		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:35:13-56
-activity#com.zeeshanelahi.barcodescannerandcameraxdemo.view.SettingActivity
-ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:38:9-40:20
-	android:name
-		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:39:13-49
+		ADDED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml:35:13-49
 uses-sdk
 INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\src\main\AndroidManifest.xml
@@ -304,8 +300,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Windows\
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Windows\.gradle\caches\transforms-3\c1e9fd41e4d8287f5018ebf58a991524\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\83ce211aa880fdde25ba9d272e9ebeae\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Windows\.gradle\caches\transforms-3\83ce211aa880fdde25ba9d272e9ebeae\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-view:1.0.0-alpha11] C:\Users\Windows\.gradle\caches\transforms-3\7b61358b0b7b527d12352a42bc3d8e35\transformed\jetified-camera-view-1.0.0-alpha11\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-view:1.0.0-alpha11] C:\Users\Windows\.gradle\caches\transforms-3\7b61358b0b7b527d12352a42bc3d8e35\transformed\jetified-camera-view-1.0.0-alpha11\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-view:1.0.0-alpha27] C:\Users\Windows\.gradle\caches\transforms-3\445704ecb631b0c8ffde656ff5f29b06\transformed\jetified-camera-view-1.0.0-alpha27\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-view:1.0.0-alpha27] C:\Users\Windows\.gradle\caches\transforms-3\445704ecb631b0c8ffde656ff5f29b06\transformed\jetified-camera-view-1.0.0-alpha27\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Windows\.gradle\caches\transforms-3\c7b811d203f079b2eade360bb2118f28\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Windows\.gradle\caches\transforms-3\c7b811d203f079b2eade360bb2118f28\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Windows\.gradle\caches\transforms-3\80ba2a5e79208e5d4b0ebf083db6695f\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
@@ -378,10 +374,12 @@ MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\cach
 MERGED from [androidx.fragment:fragment-ktx:1.6.0] C:\Users\Windows\.gradle\caches\transforms-3\fdcec9c170bd7205216e417cb2ca0855\transformed\jetified-fragment-ktx-1.6.0\AndroidManifest.xml:20:5-44
 MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:18:6-75
 MERGED from [org.chromium.net:cronet-embedded:119.6045.31] C:\Users\Windows\.gradle\caches\transforms-3\d4f52cad39d631fed01c86b6a01847e3\transformed\jetified-cronet-embedded-119.6045.31\AndroidManifest.xml:18:6-75
-MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-camera2:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\eb57d0d367a02f440f8ac027b04321e5\transformed\jetified-camera-camera2-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-lifecycle:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\d8255f15b66acf7ae8dbb0c70991f04c\transformed\jetified-camera-lifecycle-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-lifecycle:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\d8255f15b66acf7ae8dbb0c70991f04c\transformed\jetified-camera-lifecycle-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-camera2:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\baccafcff5bb8765ccd81976b9f60bf9\transformed\jetified-camera-camera2-1.0.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-camera2:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\baccafcff5bb8765ccd81976b9f60bf9\transformed\jetified-camera-camera2-1.0.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-lifecycle:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\12b20a0dfbdf0690f349a1624cf083b1\transformed\jetified-camera-lifecycle-1.0.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-lifecycle:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\12b20a0dfbdf0690f349a1624cf083b1\transformed\jetified-camera-lifecycle-1.0.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-core:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\c589be9b7b15bcb1233c1770d5f3e8ac\transformed\jetified-camera-core-1.0.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-core:1.0.2] C:\Users\Windows\.gradle\caches\transforms-3\c589be9b7b15bcb1233c1770d5f3e8ac\transformed\jetified-camera-core-1.0.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5fa1efc54168b727dc83b3c7e0e5cf24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\5fa1efc54168b727dc83b3c7e0e5cf24\transformed\jetified-emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\Windows\.gradle\caches\transforms-3\1ac40615595db905d075b72e9ce163ef\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:21:5-44
@@ -408,8 +406,6 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows\.gradle\caches
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\4e1b4ee1289741b1ad1e96324bf48bab\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Windows\.gradle\caches\transforms-3\0cadcd5e124d1ab62d0375605aa1cfc1\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Windows\.gradle\caches\transforms-3\0cadcd5e124d1ab62d0375605aa1cfc1\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-core:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\523408c66614d014d24e8706cb3cdf56\transformed\jetified-camera-core-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.camera:camera-core:1.0.0-beta04] C:\Users\Windows\.gradle\caches\transforms-3\523408c66614d014d24e8706cb3cdf56\transformed\jetified-camera-core-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\a692c6bfc5de5d7982b6ab1a685642bf\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\a692c6bfc5de5d7982b6ab1a685642bf\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.4.1] C:\Users\Windows\.gradle\caches\transforms-3\1d80f7cec872a7642721cd4d732824da\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
@@ -460,6 +456,8 @@ MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows\.gradle\caches\t
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\605ac935fe4572ddea84e391405dd58c\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\de55e8f84e1d7a7116b100d3818b2a0f\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Windows\.gradle\caches\transforms-3\de55e8f84e1d7a7116b100d3818b2a0f\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Windows\.gradle\caches\transforms-3\269777a23a471590ef64dc091d33ebb1\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.firebase:firebase-components:17.1.0] C:\Users\Windows\.gradle\caches\transforms-3\269777a23a471590ef64dc091d33ebb1\transformed\jetified-firebase-components-17.1.0\AndroidManifest.xml:18:5-20:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Windows\.gradle\caches\transforms-3\9600781f9e263e27e6861e2e284179cf\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -476,8 +474,6 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Us
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\d1bbe1e0f4a1cd4ae07c417a228ccbb3\transformed\jetified-transport-backend-cct-2.2.2\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\48b1ccdfba6253ab16ba0fbb3b7b817a\transformed\jetified-transport-runtime-2.2.2\AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.2] C:\Users\Windows\.gradle\caches\transforms-3\48b1ccdfba6253ab16ba0fbb3b7b817a\transformed\jetified-transport-runtime-2.2.2\AndroidManifest.xml:18:5-20:41
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\d74561f9eeebeb222c225a0238d753b0\transformed\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\0c39801e731dfe1dbd5656be0b5ce1c2\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\0c39801e731dfe1dbd5656be0b5ce1c2\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Windows\.gradle\caches\transforms-3\5be5cb507ccc684f799365f838449b07\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44

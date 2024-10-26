@@ -31,6 +31,9 @@ public final class ActivityMenuBinding implements ViewBinding {
   public final View horizontalRuler;
 
   @NonNull
+  public final ImageView logo;
+
+  @NonNull
   public final Button pushQueueButton;
 
   @NonNull
@@ -43,12 +46,14 @@ public final class ActivityMenuBinding implements ViewBinding {
   public final ImageView settingButton;
 
   private ActivityMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonNhapMa,
-      @NonNull Button buttonQuet, @NonNull View horizontalRuler, @NonNull Button pushQueueButton,
-      @NonNull TextView queueLabel, @NonNull TextView queueTv, @NonNull ImageView settingButton) {
+      @NonNull Button buttonQuet, @NonNull View horizontalRuler, @NonNull ImageView logo,
+      @NonNull Button pushQueueButton, @NonNull TextView queueLabel, @NonNull TextView queueTv,
+      @NonNull ImageView settingButton) {
     this.rootView = rootView;
     this.buttonNhapMa = buttonNhapMa;
     this.buttonQuet = buttonQuet;
     this.horizontalRuler = horizontalRuler;
+    this.logo = logo;
     this.pushQueueButton = pushQueueButton;
     this.queueLabel = queueLabel;
     this.queueTv = queueTv;
@@ -100,6 +105,12 @@ public final class ActivityMenuBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.logo;
+      ImageView logo = ViewBindings.findChildViewById(rootView, id);
+      if (logo == null) {
+        break missingId;
+      }
+
       id = R.id.push_queue_button;
       Button pushQueueButton = ViewBindings.findChildViewById(rootView, id);
       if (pushQueueButton == null) {
@@ -125,7 +136,7 @@ public final class ActivityMenuBinding implements ViewBinding {
       }
 
       return new ActivityMenuBinding((ConstraintLayout) rootView, buttonNhapMa, buttonQuet,
-          horizontalRuler, pushQueueButton, queueLabel, queueTv, settingButton);
+          horizontalRuler, logo, pushQueueButton, queueLabel, queueTv, settingButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
