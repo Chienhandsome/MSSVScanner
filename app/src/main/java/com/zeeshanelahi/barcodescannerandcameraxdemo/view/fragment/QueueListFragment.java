@@ -29,5 +29,6 @@ public class QueueListFragment extends Fragment {
     }
 
     private void setUpViewEvents() {
+
     }
 }

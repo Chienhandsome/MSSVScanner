@@ -291,11 +291,11 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         dialog.show();
 
         btXacNhan.setOnClickListener(view -> {
-            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
-                onConnectToInternet(mssv);
-            } else {
-                onCannotConnectToInternet(mssv);
-            }
+//            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
+//                onConnectToInternet(mssv);
+//            } else {
+//                onCannotConnectToInternet(mssv);
+//            }
             dialogIsShowing = false;
             dialog.dismiss();
         });

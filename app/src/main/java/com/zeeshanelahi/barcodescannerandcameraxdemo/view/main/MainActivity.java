@@ -1,6 +1,8 @@
 package com.zeeshanelahi.barcodescannerandcameraxdemo.view.main;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,21 +11,21 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityContainerBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.ActivityMainBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.InputFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.MenuFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.QueueListFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.ScanFragment;
 
-public class MainActivity extends AppCompatActivity implements OnFragmentChangeListener {
+public class MainActivity extends AppCompatActivity implements OnFragmentChangeListener{
 
     private final String TAG = "MainActivity";
-    private ActivityContainerBinding viewBinding;
+    private ActivityMainBinding viewBinding;
 
     private FragmentManager fragmentManager;
     private Fragment activeFragment;
-
     private Fragment fragmentMenu;
     private Fragment fragmentScan;
     private Fragment fragmentInput;
@@ -31,10 +33,22 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
 
     private BottomNavigationView bottomNavigationView;
 
+    private InternetStateListenerer internetStateListenerer = new InternetStateListenerer() {
+        @Override
+        public void onConnected() {
+            viewBinding.warningTextView.setVisibility(View.INVISIBLE);
+        }
+
+        @Override
+        public void onDisconnected() {
+            viewBinding.warningTextView.setVisibility(View.VISIBLE);
+        }
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewBinding = ActivityContainerBinding.inflate(getLayoutInflater());
+        viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
         //tat action bar
         getSupportActionBar().hide();
         setContentView(viewBinding.getRoot());
@@ -42,6 +56,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
 
         setUpFragment();
         setUpBottomNavigation();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        InternetBroadCastReceiver.getInstance(internetStateListenerer).activeBroadCast(this);
+
     }
 
     private void setUpBottomNavigation() {

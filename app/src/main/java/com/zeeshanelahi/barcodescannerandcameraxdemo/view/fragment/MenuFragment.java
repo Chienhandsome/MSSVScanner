@@ -88,5 +88,7 @@ public class MenuFragment extends Fragment implements Serializable {
                 fragmentChangeListener.onChangeFragment(StringValue.INPUT_FRAGMENT);
             }
         });
+
+
     }
 }

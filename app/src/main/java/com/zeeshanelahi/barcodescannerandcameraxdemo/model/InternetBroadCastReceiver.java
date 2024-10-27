@@ -12,17 +12,21 @@ import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.zeeshanelahi.barcodescannerandcameraxdemo.view.main.InternetStateListenerer;
+
 public class InternetBroadCastReceiver extends BroadcastReceiver {
     private static final String TAG = "InternetBroadCastReceiver";
     private boolean isConnecting;
+    private InternetStateListenerer internetStateListenerer;
     private static InternetBroadCastReceiver instance;
-    private InternetBroadCastReceiver() {
+    private InternetBroadCastReceiver(InternetStateListenerer internetStateListenerer) {
+        this.internetStateListenerer = internetStateListenerer;
         isConnecting = false;
     }
 
-    public static synchronized InternetBroadCastReceiver getInstance() {
+    public static synchronized InternetBroadCastReceiver getInstance(InternetStateListenerer internetStateListenerer) {
         if (instance == null) {
-            instance = new InternetBroadCastReceiver();
+            instance = new InternetBroadCastReceiver(internetStateListenerer);
         }
         return instance;
     }
@@ -34,12 +38,13 @@ public class InternetBroadCastReceiver extends BroadcastReceiver {
                 isConnecting = true;
                 Intent inte = new Intent("reconnect-internet");
                 LocalBroadcastManager.getInstance(context).sendBroadcast(inte);
-
-                Toast.makeText(context, "Available Network", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Available Network", Toast.LENGTH_SHORT).show();
+                internetStateListenerer.onConnected();
                 Log.d(TAG, "Available Network ");
             }else if (!isNetWorkAvailable(context) && isConnecting){
                 isConnecting = false;
-                Toast.makeText(context, "Unavailable Network", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Unavailable Network", Toast.LENGTH_SHORT).show();
+                internetStateListenerer.onDisconnected();
                 Log.d(TAG, "Unavailable Network ");
             }
         }

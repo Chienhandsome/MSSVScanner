@@ -3139,6 +3139,7 @@ drawable ic_queue
 drawable ic_search_black_24
 drawable ic_setting
 drawable ic_target
+drawable ic_warning
 drawable ic_white_back
 drawable ic_white_barcode_scanner
 drawable ic_white_barcode_scanner_resized
@@ -3780,6 +3781,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id warningTextView
 id west
 id wide
 id withText
@@ -3908,7 +3910,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_container
+layout activity_main
 layout activity_menu
 layout activity_setting
 layout custom_dialog
