@@ -32,6 +32,8 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.FragmentScanBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.firebase.MssvFirebaseManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
@@ -43,10 +45,14 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback, ExchangeScannedData {
+    private static final String DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
     private static final String TAG = "ScanFragment";
     private static final int PERMISSION_REQUESTS = 1;
     private FragmentScanBinding binding;
@@ -296,6 +302,14 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
 //            } else {
 //                onCannotConnectToInternet(mssv);
 //            }
+            Date date = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN, Locale.getDefault());
+            String scanTimeString = dateFormat.format(date);
+            MSSVInfo mssvInfo = new MSSVInfo(binding.barcodeRawValue.getText().toString().trim(),
+                    scanTimeString);
+            MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
+            Log.d(TAG, "dialogConfirm: true");
+            mssvFirebaseManager.addMSSVListIntoFirebase(mssvInfo);
             dialogIsShowing = false;
             dialog.dismiss();
         });

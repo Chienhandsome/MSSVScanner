@@ -4,7 +4,7 @@
             "outputFile": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-55:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\605ac935fe4572ddea84e391405dd58c\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\bbed10eb92c502f012d62d33be0047af\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\753331dddf5fb1cc70fe16dc8549e5b5\\transformed\\material-1.10.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\3ef65219add986f79e59f30150c863a2\\transformed\\material-1.10.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Windows\\.gradle\\caches\\transforms-3\\80ba2a5e79208e5d4b0ebf083db6695f\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\4d2ab138c065920b45c704003d5dbc7b\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

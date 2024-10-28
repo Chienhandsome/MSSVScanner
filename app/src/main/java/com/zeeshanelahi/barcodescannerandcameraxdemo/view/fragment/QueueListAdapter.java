@@ -9,13 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
 
 import java.util.ArrayList;
 
 public class QueueListAdapter extends RecyclerView.Adapter<QueueListAdapter.ViewHolder> {
-    private ArrayList<String> mssvList;
+    private ArrayList<MSSVInfo> mssvList;
 
-    public QueueListAdapter(ArrayList<String> mssvList) {
+    public QueueListAdapter(ArrayList<MSSVInfo> mssvList) {
         this.mssvList = mssvList;
     }
 
@@ -28,8 +29,8 @@ public class QueueListAdapter extends RecyclerView.Adapter<QueueListAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String mssv = mssvList.get(position);
-        String displayText = position + ". " + mssv;
+        MSSVInfo mssv = mssvList.get(position);
+        String displayText = (position + 1) + ". " + mssv.getMssv();
         holder.mssvTV.setText(displayText);
     }
 
