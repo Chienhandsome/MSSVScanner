@@ -48,6 +48,10 @@ public class MenuFragment extends Fragment implements Serializable {
     public MenuFragment() {
     }
 
+    public MenuFragment(OnFragmentChangeListener fragmentChangeListener) {
+        this.fragmentChangeListener = fragmentChangeListener;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,22 +62,6 @@ public class MenuFragment extends Fragment implements Serializable {
         setUpviewEvents();
 
         return view;
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentChangeListener) {
-            fragmentChangeListener = (OnFragmentChangeListener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement OnFragmentChangeListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        fragmentChangeListener = null;
     }
 
     private void setUpviewEvents() {
