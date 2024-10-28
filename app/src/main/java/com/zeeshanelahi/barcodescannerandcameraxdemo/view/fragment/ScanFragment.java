@@ -52,7 +52,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback, ExchangeScannedData {
-    private static final String DATE_PATTERN = "yyyy-MM-dd HH:mm:ss";
     private static final String TAG = "ScanFragment";
     private static final int PERMISSION_REQUESTS = 1;
     private FragmentScanBinding binding;
@@ -303,7 +302,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
 //                onCannotConnectToInternet(mssv);
 //            }
             Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN, Locale.getDefault());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
             String scanTimeString = dateFormat.format(date);
             MSSVInfo mssvInfo = new MSSVInfo(binding.barcodeRawValue.getText().toString().trim(),
                     scanTimeString);

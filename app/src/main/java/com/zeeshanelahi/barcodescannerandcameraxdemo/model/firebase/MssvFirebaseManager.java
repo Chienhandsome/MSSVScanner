@@ -21,7 +21,6 @@ public class MssvFirebaseManager {
     private static final String SV_LIST = "Danh Sách Sinh Viên";
     private DatabaseReference svListReference;
     private static MssvFirebaseManager instance;
-    private String pattern = "yyyy-MM-dd HH:mm:ss";
 
     public static synchronized MssvFirebaseManager getInstance(){
         if (instance == null){
