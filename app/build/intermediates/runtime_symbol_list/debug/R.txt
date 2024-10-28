@@ -4099,6 +4099,7 @@ int string common_open_on_phone 0x7f110043
 int string common_signin_button_text 0x7f110044
 int string common_signin_button_text_long 0x7f110045
 int string copy 0x7f110046
+int string date_pattern 0x7f1100e5
 int string dest_title 0x7f110047
 int string dnktpm18 0x7f110048
 int string emty_cd 0x7f110049

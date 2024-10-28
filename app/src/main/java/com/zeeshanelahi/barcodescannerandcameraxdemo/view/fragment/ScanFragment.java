@@ -32,6 +32,8 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.FragmentScanBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.firebase.MssvFirebaseManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
@@ -43,8 +45,11 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback, ExchangeScannedData {
     private static final String TAG = "ScanFragment";
@@ -287,19 +292,26 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         Button btXacNhan = dialog.findViewById(R.id.btXacNhan);
         Button btHuy = dialog.findViewById(R.id.btHuy);
         TextView message = dialog.findViewById(R.id.message);
-        message.setText("Điểm danh: " + mssv + " ?");
 
         dialog.show();
 
-//        btXacNhan.setOnClickListener(view -> {
+        btXacNhan.setOnClickListener(view -> {
 //            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
 //                onConnectToInternet(mssv);
 //            } else {
 //                onCannotConnectToInternet(mssv);
 //            }
-//            dialogIsShowing = false;
-//            dialog.dismiss();
-//        });
+            Date date = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
+            String scanTimeString = dateFormat.format(date);
+            MSSVInfo mssvInfo = new MSSVInfo(binding.barcodeRawValue.getText().toString().trim(),
+                    scanTimeString);
+            MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
+            Log.d(TAG, "dialogConfirm: true");
+            mssvFirebaseManager.addMSSVListIntoFirebase(mssvInfo);
+            dialogIsShowing = false;
+            dialog.dismiss();
+        });
 
         btHuy.setOnClickListener(view -> {
             dialogIsShowing = false;
