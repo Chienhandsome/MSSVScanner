@@ -3314,6 +3314,7 @@ id anticipate
 id arc
 id asConfigured
 id async
+id attendWarning
 id auto
 id autoComplete
 id autoCompleteToEnd
@@ -3481,6 +3482,7 @@ id included
 id indeterminate
 id info
 id input_mssv
+id internetWarning
 id invisible
 id inward
 id italic
@@ -3785,7 +3787,6 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
-id warningTextView
 id west
 id wide
 id withText
@@ -3940,6 +3941,7 @@ layout expand_button
 layout fragment_input_code
 layout fragment_queue_list
 layout fragment_scan
+layout fragment_setting
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity

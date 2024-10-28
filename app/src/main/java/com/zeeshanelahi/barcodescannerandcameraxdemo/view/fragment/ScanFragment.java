@@ -287,18 +287,19 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         Button btXacNhan = dialog.findViewById(R.id.btXacNhan);
         Button btHuy = dialog.findViewById(R.id.btHuy);
         TextView message = dialog.findViewById(R.id.message);
+        message.setText("Điểm danh: " + mssv + " ?");
 
         dialog.show();
 
-        btXacNhan.setOnClickListener(view -> {
+//        btXacNhan.setOnClickListener(view -> {
 //            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
 //                onConnectToInternet(mssv);
 //            } else {
 //                onCannotConnectToInternet(mssv);
 //            }
-            dialogIsShowing = false;
-            dialog.dismiss();
-        });
+//            dialogIsShowing = false;
+//            dialog.dismiss();
+//        });
 
         btHuy.setOnClickListener(view -> {
             dialogIsShowing = false;

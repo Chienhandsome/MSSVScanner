@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity{
     private InternetStateListenerer internetStateListenerer = new InternetStateListenerer() {
         @Override
         public void onConnected() {
-            viewBinding.warningTextView.setVisibility(View.INVISIBLE);
+            viewBinding.internetWarning.setVisibility(View.INVISIBLE);
         }
 
         @Override
         public void onDisconnected() {
-            viewBinding.warningTextView.setVisibility(View.VISIBLE);
+            viewBinding.internetWarning.setVisibility(View.VISIBLE);
         }
     };
 

@@ -21,21 +21,25 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView attendWarning;
+
+  @NonNull
   public final BottomNavigationView bottomNavigation;
 
   @NonNull
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
-  public final TextView warningTextView;
+  public final TextView internetWarning;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView attendWarning,
       @NonNull BottomNavigationView bottomNavigation, @NonNull ConstraintLayout fragmentContainer,
-      @NonNull TextView warningTextView) {
+      @NonNull TextView internetWarning) {
     this.rootView = rootView;
+    this.attendWarning = attendWarning;
     this.bottomNavigation = bottomNavigation;
     this.fragmentContainer = fragmentContainer;
-    this.warningTextView = warningTextView;
+    this.internetWarning = internetWarning;
   }
 
   @Override
@@ -65,6 +69,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.attendWarning;
+      TextView attendWarning = ViewBindings.findChildViewById(rootView, id);
+      if (attendWarning == null) {
+        break missingId;
+      }
+
       id = R.id.bottomNavigation;
       BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigation == null) {
@@ -77,14 +87,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.warningTextView;
-      TextView warningTextView = ViewBindings.findChildViewById(rootView, id);
-      if (warningTextView == null) {
+      id = R.id.internetWarning;
+      TextView internetWarning = ViewBindings.findChildViewById(rootView, id);
+      if (internetWarning == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavigation,
-          fragmentContainer, warningTextView);
+      return new ActivityMainBinding((ConstraintLayout) rootView, attendWarning, bottomNavigation,
+          fragmentContainer, internetWarning);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

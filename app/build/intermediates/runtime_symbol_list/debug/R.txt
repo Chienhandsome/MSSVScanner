@@ -3313,6 +3313,7 @@ int id anticipate 0x7f080053
 int id arc 0x7f080054
 int id asConfigured 0x7f080055
 int id async 0x7f080056
+int id attendWarning 0x7f080239
 int id auto 0x7f080057
 int id autoComplete 0x7f080058
 int id autoCompleteToEnd 0x7f080059
@@ -3480,6 +3481,7 @@ int id included 0x7f0800fa
 int id indeterminate 0x7f0800fb
 int id info 0x7f0800fc
 int id input_mssv 0x7f0800fd
+int id internetWarning 0x7f08023a
 int id invisible 0x7f0800fe
 int id inward 0x7f0800ff
 int id italic 0x7f080100
@@ -3784,7 +3786,6 @@ int id view_tree_saved_state_registry_owner 0x7f08022a
 int id view_tree_view_model_store_owner 0x7f08022b
 int id visible 0x7f08022c
 int id visible_removing_fragment_view_tag 0x7f08022d
-int id warningTextView 0x7f08022e
 int id west 0x7f08022f
 int id wide 0x7f080230
 int id withText 0x7f080231
@@ -3939,6 +3940,7 @@ int layout expand_button 0x7f0b0032
 int layout fragment_input_code 0x7f0b0033
 int layout fragment_queue_list 0x7f0b0034
 int layout fragment_scan 0x7f0b0035
+int layout fragment_setting 0x7f0b0087
 int layout image_frame 0x7f0b0036
 int layout ime_base_split_test_activity 0x7f0b0037
 int layout ime_secondary_split_test_activity 0x7f0b0038
