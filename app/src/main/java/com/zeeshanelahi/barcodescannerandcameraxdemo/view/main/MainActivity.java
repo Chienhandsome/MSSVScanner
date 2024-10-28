@@ -19,7 +19,7 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.MenuFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.QueueListFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.ScanFragment;
 
-public class MainActivity extends AppCompatActivity implements OnFragmentChangeListener{
+public class MainActivity extends AppCompatActivity{
 
     private final String TAG = "MainActivity";
     private ActivityMainBinding viewBinding;
@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
         @Override
         public void onDisconnected() {
             viewBinding.warningTextView.setVisibility(View.VISIBLE);
+        }
+    };
+
+    private OnFragmentChangeListener onFragmentChangeListener = new OnFragmentChangeListener() {
+        @Override
+        public void onChangeFragment(int id) {
+            onChangFragment(id);
         }
     };
 
@@ -94,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
 
     private void setUpFragment() {
         fragmentManager = getSupportFragmentManager();
-        fragmentMenu = new MenuFragment();
+        fragmentMenu = new MenuFragment(onFragmentChangeListener);
         fragmentScan = new ScanFragment();
         fragmentInput = new InputFragment();
         fragmentQueue = new QueueListFragment();
@@ -122,10 +129,5 @@ public class MainActivity extends AppCompatActivity implements OnFragmentChangeL
             activeFragment = fragmentScan;
             bottomNavigationView.setSelectedItemId(R.id.scan_qr_code);
         }
-    }
-
-    @Override
-    public void onChangeFragment(int id) {
-        onChangFragment(id);
     }
 }
