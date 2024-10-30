@@ -1,6 +1,0 @@
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-jetified-annotation-experimental-1.4.0-0 C:\Users\Windows\.gradle\caches\transforms-3\756953ddd47e61279513f6d89b6e37f9\transformed\jetified-annotation-experimental-1.4.0\res
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-jetified-core-1.5.0-1 C:\Users\Windows\.gradle\caches\transforms-3\8458e0374aca039475a2b741ca4ba6d4\transformed\jetified-core-1.5.0\res
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-androidTest-2 D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\build\generated\res\resValues\androidTest\debug
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-mergeDebugAndroidTestResources-3 D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-mergeDebugAndroidTestResources-4 D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.zeeshanelahi.barcodescannerandcameraxdemo.test.app-merged_res-5 D:\AndroidProject\BarcodeScannerAndCameraXDemo-master\app\build\intermediates\merged_res\debugAndroidTest

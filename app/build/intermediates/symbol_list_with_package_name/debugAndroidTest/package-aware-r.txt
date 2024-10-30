@@ -1,3 +1,0 @@
-com.zeeshanelahi.barcodescannerandcameraxdemo.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
