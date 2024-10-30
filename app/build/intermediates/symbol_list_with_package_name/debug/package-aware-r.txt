@@ -3138,9 +3138,11 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_patse
 drawable ic_queue
+drawable ic_reaload
 drawable ic_search_black_24
 drawable ic_setting
 drawable ic_target
+drawable ic_tick
 drawable ic_warning
 drawable ic_white_back
 drawable ic_white_barcode_scanner
@@ -3642,6 +3644,7 @@ id rectangles
 id recyclerView
 id recycler_view
 id report_drawn
+id resendBtn
 id resultContainer
 id reverseSawtooth
 id right

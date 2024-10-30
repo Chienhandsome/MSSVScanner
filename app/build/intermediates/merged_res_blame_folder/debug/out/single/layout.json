@@ -12,10 +12,6 @@
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\dialog_confirm.xml"
     },
     {
-        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:/layout/dialog_confirm.xml",
-        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:/layout/dialog_confirm.xml"
-    },
-    {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:\\layout\\fragment_queue_list.xml",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\fragment_queue_list.xml"
     },
@@ -30,6 +26,10 @@
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:\\layout\\fragment_input_code.xml",
         "source": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:\\layout\\fragment_input_code.xml"
+    },
+    {
+        "merged": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:/layout/item_mssv.xml",
+        "source": "com.zeeshanelahi.barcodescannerandcameraxdemo.app-main-59:/layout/item_mssv.xml"
     },
     {
         "merged": "C:\\Users\\Windows\\.gradle\\daemon\\8.2\\com.zeeshanelahi.barcodescannerandcameraxdemo.app-mergeDebugResources-56:\\layout\\fragment_scan.xml",

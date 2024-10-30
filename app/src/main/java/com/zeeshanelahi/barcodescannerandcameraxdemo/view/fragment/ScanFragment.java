@@ -300,7 +300,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
 
         btXacNhan.setOnClickListener(view -> {
             if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
-                onConnectedToInternet(mssv);
+                onConnectToInternet(mssv);
             } else {
                 onCannotConnectToInternet(mssv);
             }
@@ -314,7 +314,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         });
     }
 
-    private void onConnectedToInternet(String mssv) {
+    private void onConnectToInternet(String mssv) {
         try {
             // Send mssv to server
             ServerInteractor.getInstance(requireActivity()).sendMessageToServer(requireActivity(), mssv, callback);

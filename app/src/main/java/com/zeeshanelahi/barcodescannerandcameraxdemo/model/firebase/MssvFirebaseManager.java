@@ -10,11 +10,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DateConverter;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.MssvKeyHandler;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Objects;
 
 public class MssvFirebaseManager {
     private static final String TAG = "MssvFirebaseManager";
@@ -34,7 +33,7 @@ public class MssvFirebaseManager {
     }
 
     public void addMSSVListIntoFirebase(MSSVInfo mssvInfo){
-        svListReference.child(SV_LIST).child(mssvInfo.getMssv()).setValue(mssvInfo.getScanTime()).addOnCompleteListener(task -> {
+        svListReference.child(SV_LIST).child(mssvInfo.getScanTime()).setValue(mssvInfo.getMssv()).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 Log.d(TAG, "addMSSVListIntoFirebase: success");
             }
@@ -51,8 +50,8 @@ public class MssvFirebaseManager {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mssvInfoList.clear();
                 for (DataSnapshot singleSnapshot : snapshot.getChildren()){
-                    String mssv = singleSnapshot.getKey();
-                    String timeString = singleSnapshot.getValue(String.class);
+                    String timeString = Objects.requireNonNull(singleSnapshot.getKey());
+                    String mssv = singleSnapshot.getValue(String.class);
                     MSSVInfo mssvInfo = new MSSVInfo(mssv, timeString);
                     mssvInfoList.add(mssvInfo);
                 }

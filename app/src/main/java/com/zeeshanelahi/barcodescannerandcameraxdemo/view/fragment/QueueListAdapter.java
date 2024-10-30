@@ -30,7 +30,7 @@ public class QueueListAdapter extends RecyclerView.Adapter<QueueListAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MSSVInfo mssv = mssvList.get(position);
-        String displayText = (position + 1) + ". " + mssv.getMssv();
+        String displayText = (position + 1) + ". " + mssv.getMssv() + " - " + mssv.getScanTime();
         holder.mssvTV.setText(displayText);
     }
 
