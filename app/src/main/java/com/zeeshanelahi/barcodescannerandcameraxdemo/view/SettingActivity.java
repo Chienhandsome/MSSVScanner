@@ -19,8 +19,6 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelp
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.SeatRepository;
 
-import org.json.JSONArray;
-
 import java.util.Objects;
 
 public class SettingActivity extends AppCompatActivity {
@@ -110,9 +108,9 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void exportData() {
-        String successQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.SUCCES_QUEUE_KEY, "");
+        String successQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.SUCCESS_QUEUE_KEY, "");
         Log.d(TAG, "exportData Success Queue: " + successQueue);
-        String failQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.WAITNG_QUEUE_KEY, "");
+        String failQueue = SharedPreferencesHelper.getInstance(this).getString(StringValue.WAITING_QUEUE_KEY, "");
         Log.d(TAG, "exportData Fail Queue: " + failQueue);
     }
 

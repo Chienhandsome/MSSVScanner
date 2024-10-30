@@ -2,7 +2,6 @@ package com.zeeshanelahi.barcodescannerandcameraxdemo.view.main;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastRece
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.InputFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.MenuFragment;
-import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.QueueListFragment;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.HistoryFragment;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.view.fragment.ScanFragment;
 
 public class MainActivity extends AppCompatActivity{
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
     private Fragment fragmentMenu;
     private Fragment fragmentScan;
     private Fragment fragmentInput;
-    private Fragment fragmentQueue;
+    private Fragment fragmentHistory;
 
     private BottomNavigationView bottomNavigationView;
 
@@ -88,9 +87,9 @@ public class MainActivity extends AppCompatActivity{
                 fragmentManager.beginTransaction().hide(activeFragment).show(fragmentInput).commit();
                 activeFragment = fragmentInput;
                 return true;
-            } else if (itemId == R.id.queue_list) {
-                fragmentManager.beginTransaction().hide(activeFragment).show(fragmentQueue).commit();
-                activeFragment = fragmentQueue;
+            } else if (itemId == R.id.History) {
+                fragmentManager.beginTransaction().hide(activeFragment).show(fragmentHistory).commit();
+                activeFragment = fragmentHistory;
                 return true;
             }
             return false;
@@ -104,12 +103,12 @@ public class MainActivity extends AppCompatActivity{
         fragmentMenu = new MenuFragment(onFragmentChangeListener);
         fragmentScan = new ScanFragment();
         fragmentInput = new InputFragment();
-        fragmentQueue = new QueueListFragment();
+        fragmentHistory = new HistoryFragment();
 
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentMenu, "fragmentMenu").commit();
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentScan, "fragmentScan").hide(fragmentScan).commit();
         fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentInput, "fragmentInput").hide(fragmentInput).commit();
-        fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentQueue, "fragmentQueue").hide(fragmentQueue).commit();
+        fragmentManager.beginTransaction().add(R.id.fragmentContainer, fragmentHistory, "fragmentQueue").hide(fragmentHistory).commit();
 
         activeFragment = fragmentMenu;
     }

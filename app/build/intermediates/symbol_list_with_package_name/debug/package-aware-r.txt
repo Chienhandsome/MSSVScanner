@@ -3235,6 +3235,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id History
 id META
 id NO_DEBUG
 id SHIFT
@@ -3636,7 +3637,6 @@ id progress_circular
 id progress_horizontal
 id push_queue_button
 id queue_label
-id queue_list
 id queue_tv
 id radio
 id ratio

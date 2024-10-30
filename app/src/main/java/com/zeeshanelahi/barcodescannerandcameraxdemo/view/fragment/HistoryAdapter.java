@@ -13,10 +13,10 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
 
 import java.util.ArrayList;
 
-public class QueueListAdapter extends RecyclerView.Adapter<QueueListAdapter.ViewHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
     private ArrayList<MSSVInfo> mssvList;
 
-    public QueueListAdapter(ArrayList<MSSVInfo> mssvList) {
+    public HistoryAdapter(ArrayList<MSSVInfo> mssvList) {
         this.mssvList = mssvList;
     }
 

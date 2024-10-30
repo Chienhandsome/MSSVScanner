@@ -9,7 +9,6 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelp
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.StringValue
 import org.json.JSONArray
 import org.json.JSONObject
-import kotlin.math.log
 
 class MssvQueueManager(val context: Context) {
     private val queue: MutableMap<String, Boolean> = mutableMapOf()
@@ -98,7 +97,7 @@ class MssvQueueManager(val context: Context) {
             }
             jsonArray.put(jsonObject)
         }
-        sharedPreferencesHelper.saveString(StringValue.WAITNG_QUEUE_KEY, jsonArray.toString())
+        sharedPreferencesHelper.saveString(StringValue.WAITING_QUEUE_KEY, jsonArray.toString())
     }
 
     // Backup successQueue to disk
@@ -111,7 +110,7 @@ class MssvQueueManager(val context: Context) {
             }
             jsonArray.put(jsonObject)
         }
-        sharedPreferencesHelper.saveString(StringValue.SUCCES_QUEUE_KEY, jsonArray.toString())
+        sharedPreferencesHelper.saveString(StringValue.SUCCESS_QUEUE_KEY, jsonArray.toString())
     }
 
     private fun syncQueueWithMemory() {

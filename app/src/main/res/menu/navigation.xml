@@ -18,7 +18,7 @@
         android:title="@string/input" />
 
     <item
-        android:id="@+id/queue_list"
+        android:id="@+id/History"
         android:icon="@drawable/ic_queue"
-        android:title="@string/queue_list" />
+        android:title="History" />
 </menu>

@@ -3234,6 +3234,7 @@ int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
 int id CTRL 0x7f080003
 int id FUNCTION 0x7f080004
+int id History 0x7f08023b
 int id META 0x7f080005
 int id NO_DEBUG 0x7f080006
 int id SHIFT 0x7f080007
@@ -3635,7 +3636,6 @@ int id progress_circular 0x7f080192
 int id progress_horizontal 0x7f080193
 int id push_queue_button 0x7f080194
 int id queue_label 0x7f080195
-int id queue_list 0x7f080196
 int id queue_tv 0x7f080197
 int id radio 0x7f080198
 int id ratio 0x7f080199

@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,14 +22,14 @@ import com.zeeshanelahi.barcodescannerandcameraxdemo.model.firebase.MssvFirebase
 
 import java.util.ArrayList;
 
-public class QueueListFragment extends Fragment {
+public class HistoryFragment extends Fragment {
     private static final String TAG = "QueueListFragment";
     private FragmentQueueListBinding fragmentBinding;
     private ArrayList<MSSVInfo> mssvList;
-    private QueueListAdapter queueListAdapter;
+    private HistoryAdapter historyAdapter;
 
 
-    public QueueListFragment() {
+    public HistoryFragment() {
     }
 
     @Override
@@ -44,7 +43,7 @@ public class QueueListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentBinding = FragmentQueueListBinding.inflate(inflater, container, false);
         View view = fragmentBinding.getRoot();
-        queueListAdapter = new QueueListAdapter(mssvList);
+        historyAdapter = new HistoryAdapter(mssvList);
         fragmentBinding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //Refurbish the separation line
@@ -53,13 +52,13 @@ public class QueueListFragment extends Fragment {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
         dividerItemDecoration.setDrawable(insetDrawable);
         fragmentBinding.recyclerView.addItemDecoration(dividerItemDecoration);
-        fragmentBinding.recyclerView.setAdapter(queueListAdapter);
+        fragmentBinding.recyclerView.setAdapter(historyAdapter);
 
         //call firebase methods
         MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
         mssvFirebaseManager.getMSSVList(mssvList, mssvInfoList -> {
             Log.d(TAG, "onCreateView: " + mssvInfoList.size());
-            queueListAdapter.notifyItemChanged(mssvInfoList.size() - 1);
+            historyAdapter.notifyItemChanged(mssvInfoList.size() - 1);
         });
 
         setUpViewEvents();
