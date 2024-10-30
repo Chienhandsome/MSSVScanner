@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.FragmentQueueListBinding;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.SharedPreferencesHelper;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.firebase.MssvFirebaseManager;
 
@@ -54,12 +55,15 @@ public class HistoryFragment extends Fragment {
         fragmentBinding.recyclerView.addItemDecoration(dividerItemDecoration);
         fragmentBinding.recyclerView.setAdapter(historyAdapter);
 
-        //call firebase methods
+        //Call firebase methods
         MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
         mssvFirebaseManager.getMSSVList(mssvList, mssvInfoList -> {
             Log.d(TAG, "onCreateView: " + mssvInfoList.size());
             historyAdapter.notifyItemChanged(mssvInfoList.size() - 1);
         });
+
+        SharedPreferencesHelper preferencesHelper = SharedPreferencesHelper.getInstance(getContext());
+        updateUIWhenQueueHaveDate(preferencesHelper.getString("mssv_queue", null));
 
         setUpViewEvents();
         return view;
@@ -68,4 +72,16 @@ public class HistoryFragment extends Fragment {
     private void setUpViewEvents() {
 
     }
+
+    public void updateUIWhenQueueHaveDate(String dataInQueue) {
+        Log.d(TAG, "updateUIWhenQueueHaveDate: " + dataInQueue);
+        if (dataInQueue != null) {
+            if (dataInQueue.isEmpty()) {
+                fragmentBinding.updateBtn.setVisibility(View.GONE);
+            }  else {
+                fragmentBinding.updateBtn.setVisibility(View.VISIBLE);
+            }
+        } else fragmentBinding.updateBtn.setVisibility(View.GONE);
+    }
+
 }
