@@ -1,39 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="#000000"
+        android:layout_height="wrap_content"
+        android:minHeight="224dp"
+        android:background="#B9D2E4"
         android:orientation="vertical"
-        android:weightSum="5"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/message"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="5dp"
-            android:layout_weight="3"
-            android:background="#FFFFFF"
+            android:layout_weight="1"
+            android:background="#B9D2E4"
             android:gravity="center"
-            android:text="@string/th_m_th_ng_tin_sinh_vi_n_nxxxxxxxx"
+            android:text="MSSV vừa quét"
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_text_view"
+            android:backgroundTint="#E2E2E2"
+            android:gravity="center"
+            android:text="xxxxxxxx"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -44,7 +59,8 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:text="Hủy"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#E47E7E"/>
 
             <Button
                 android:id="@+id/btXacNhan"
@@ -53,7 +69,8 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:text="Xác nhận"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#C1FFCA"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

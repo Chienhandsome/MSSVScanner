@@ -50,6 +50,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPermissionsResultCallback, ExchangeScannedData {
     private static final String TAG = "ScanFragment";
@@ -288,27 +289,21 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         Dialog dialog = new Dialog(requireActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_confirm);
+        Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         Button btXacNhan = dialog.findViewById(R.id.btXacNhan);
         Button btHuy = dialog.findViewById(R.id.btHuy);
         TextView message = dialog.findViewById(R.id.message);
+        message.setText(mssv);
 
         dialog.show();
 
         btXacNhan.setOnClickListener(view -> {
-//            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
-//                onConnectToInternet(mssv);
-//            } else {
-//                onCannotConnectToInternet(mssv);
-//            }
-            Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
-            String scanTimeString = dateFormat.format(date);
-            MSSVInfo mssvInfo = new MSSVInfo(binding.barcodeRawValue.getText().toString().trim(),
-                    scanTimeString);
-            MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
-            Log.d(TAG, "dialogConfirm: true");
-            mssvFirebaseManager.addMSSVListIntoFirebase(mssvInfo);
+            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(requireActivity())) {
+                onConnectedToInternet(mssv);
+            } else {
+                onCannotConnectToInternet(mssv);
+            }
             dialogIsShowing = false;
             dialog.dismiss();
         });
@@ -319,11 +314,21 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         });
     }
 
-    private void onConnectToInternet(String mssv) {
+    private void onConnectedToInternet(String mssv) {
         try {
+            // Send mssv to server
             ServerInteractor.getInstance(requireActivity()).sendMessageToServer(requireActivity(), mssv, callback);
+
+            // Send mssv to Firebase
+            Date date = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
+            String scanTimeString = dateFormat.format(date);
+            MSSVInfo mssvInfo = new MSSVInfo(mssv, scanTimeString);
+            Log.d(TAG, "dialogConfirm: true");
+            MssvFirebaseManager.getInstance().addMSSVListIntoFirebase(mssvInfo);
+
         } catch (JSONException e) {
-            Toast.makeText(requireActivity(), "Failed to send message " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(requireActivity(), "Failed to send message " + e.getMessage(), Toast.LENGTH_SHORT).show();
             Log.d(TAG, "dialogConfirm: " + e.getMessage());
         }
     }

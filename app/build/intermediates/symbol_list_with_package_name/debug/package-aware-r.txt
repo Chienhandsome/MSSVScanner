@@ -3224,6 +3224,7 @@ drawable rounded_button
 drawable rounded_button_background
 drawable rounded_edit_text_input_code
 drawable rounded_edit_text_input_code_on_fail
+drawable rounded_text_view
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3936,7 +3937,6 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_change_link_server
 layout dialog_confirm
-layout dialog_input_code
 layout expand_button
 layout fragment_input_code
 layout fragment_queue_list

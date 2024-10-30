@@ -19,6 +19,11 @@ public class InternetBroadCastReceiver extends BroadcastReceiver {
     private boolean isConnecting;
     private InternetStateListenerer internetStateListenerer;
     private static InternetBroadCastReceiver instance;
+
+    private InternetBroadCastReceiver() {
+        isConnecting = false;
+    }
+
     private InternetBroadCastReceiver(InternetStateListenerer internetStateListenerer) {
         this.internetStateListenerer = internetStateListenerer;
         isConnecting = false;
@@ -27,6 +32,13 @@ public class InternetBroadCastReceiver extends BroadcastReceiver {
     public static synchronized InternetBroadCastReceiver getInstance(InternetStateListenerer internetStateListenerer) {
         if (instance == null) {
             instance = new InternetBroadCastReceiver(internetStateListenerer);
+        }
+        return instance;
+    }
+
+    public static synchronized InternetBroadCastReceiver getInstance() {
+        if (instance == null) {
+            instance = new InternetBroadCastReceiver();
         }
         return instance;
     }
