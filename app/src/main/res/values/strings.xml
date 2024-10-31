@@ -31,7 +31,7 @@
     <string name="input">Input</string>
     <string name="a_th_v_ph_a_camera">Đưa thẻ về phía camera</string>
     <string name="emty_cd">emty_cd</string>
-    <string name="date_pattern">yyyy-MM-dd HH:mm:ss</string>
+    <string name="DATE_PATTERN">yyyy-MM-dd HH:mm:ss</string>
     <string name="update">Cập nhật</string>
     <string name="queue">Hàng đợi</string>
 </resources>

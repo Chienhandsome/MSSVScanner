@@ -13,11 +13,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.zeeshanelahi.barcodescannerandcameraxdemo.R;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.SendMessageCallback;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.databinding.FragmentInputCodeBinding;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.InternetBroadCastReceiver;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.enities.MSSVInfo;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.model.firebase.MssvFirebaseManager;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.MssvQueueManager;
+import com.zeeshanelahi.barcodescannerandcameraxdemo.model.repo.ServerInteractor;
 import com.zeeshanelahi.barcodescannerandcameraxdemo.utils.DataChecker;
+
+import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +32,21 @@ public class InputFragment extends Fragment {
     private String TAG = "InputFragment";
     private FragmentInputCodeBinding viewBinding;
     private Context context;
+    private SendMessageCallback callback = new SendMessageCallback() {
+        @Override
+        public void onMessageSentSucced() {
+        }
+
+        @Override
+        public void onMessageFailed(String mssv) {
+            MssvQueueManager.Companion.getInstance(context).addMssvToQueue(mssv);
+            Toast.makeText(context, "Gửi thất bại\nThử kiểm tra link server !", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    //constructor
+    public InputFragment() {
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,18 +80,36 @@ public class InputFragment extends Fragment {
         else if (!DataChecker.isMSSV(mssv)) {
             Toast.makeText(context, "Mã số sinh viên không hợp lệ !", Toast.LENGTH_SHORT).show();
         } else /*if (seatInfo != null)*/ {
-            Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
-            String scanTimeString = dateFormat.format(date);
-            MSSVInfo mssvInfo = new MSSVInfo(mssv,
-                    scanTimeString);
-            MssvFirebaseManager mssvFirebaseManager = MssvFirebaseManager.getInstance();
-            mssvFirebaseManager.addMSSVListIntoFirebase(mssvInfo);
+            if (InternetBroadCastReceiver.getInstance().isNetWorkAvailable(context)) {
+                onConnectToInternet(mssv);
+            } else {
+                onCannotConnectToInternet(mssv);
+            }
             viewBinding.editTextText.setText("");
         }
     }
 
-    //constructor
-    public InputFragment() {
+    private void onConnectToInternet(String mssv) {
+        try {
+            // Send mssv to server
+            ServerInteractor.getInstance(requireActivity()).sendMessageToServer(requireActivity(), mssv, callback);
+
+            // Send mssv to Firebase
+            Date date = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.DATE_PATTERN), Locale.getDefault());
+            String scanTimeString = dateFormat.format(date);
+            MSSVInfo mssvInfo = new MSSVInfo(mssv, scanTimeString);
+            Log.d(TAG, "dialogConfirm: true");
+            MssvFirebaseManager.getInstance().addMSSVListIntoFirebase(mssvInfo);
+
+        } catch (JSONException e) {
+//            Toast.makeText(requireActivity(), "Failed to send message " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "dialogConfirm: " + e.getMessage());
+        }
+    }
+
+    private void onCannotConnectToInternet(String mssv) {
+        Toast.makeText(context, "Không có kết nối internet\nMã số sinh viên đã được lưu vào danh sách chờ", Toast.LENGTH_SHORT).show();
+        MssvQueueManager.Companion.getInstance(context).addMssvToQueue(mssv);
     }
 }

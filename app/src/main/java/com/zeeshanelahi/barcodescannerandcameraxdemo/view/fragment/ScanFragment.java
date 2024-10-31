@@ -79,6 +79,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
         @Override
         public void onMessageFailed(String mssv) {
             MssvQueueManager.Companion.getInstance(context).addMssvToQueue(mssv);
+            Toast.makeText(context, "Gửi thất bại\nThử kiểm tra link server !", Toast.LENGTH_SHORT).show();
         }
     };
 
@@ -133,7 +134,11 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
     @Override
     public void onResume() {
         super.onResume();
-        bindAllCameraUseCases();
+        if (allPermissionsGranted()) {
+            bindAllCameraUseCases();
+        } else {
+            getRuntimePermissions();
+        }
     }
 
     @Override
@@ -321,7 +326,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
 
             // Send mssv to Firebase
             Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_pattern), Locale.getDefault());
+            SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.DATE_PATTERN), Locale.getDefault());
             String scanTimeString = dateFormat.format(date);
             MSSVInfo mssvInfo = new MSSVInfo(mssv, scanTimeString);
             Log.d(TAG, "dialogConfirm: true");
@@ -334,7 +339,7 @@ public class ScanFragment extends Fragment implements ActivityCompat.OnRequestPe
     }
 
     private void onCannotConnectToInternet(String mssv) {
-        Toast.makeText(requireActivity(), "Không có kết nối internet!\nMSSV sẽ được gửi khi có mạng trở lại", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Không có kết nối internet\nMã số sinh viên đã được lưu vào danh sách chờ", Toast.LENGTH_SHORT).show();
         MssvQueueManager.Companion.getInstance(context).addMssvToQueue(mssv);
     }
 }

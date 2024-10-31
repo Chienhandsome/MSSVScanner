@@ -48,8 +48,8 @@ public class InternetBroadCastReceiver extends BroadcastReceiver {
         if (ConnectivityManager.CONNECTIVITY_ACTION.equals(intent.getAction())){
             if (isNetWorkAvailable(context) && !isConnecting){
                 isConnecting = true;
-                Intent inte = new Intent("reconnect-internet");
-                LocalBroadcastManager.getInstance(context).sendBroadcast(inte);
+
+                LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(StringValue.RECONNECT_ACTION));
                 //Toast.makeText(context, "Available Network", Toast.LENGTH_SHORT).show();
                 internetStateListenerer.onConnected();
                 Log.d(TAG, "Available Network ");

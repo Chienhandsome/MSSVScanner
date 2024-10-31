@@ -3143,6 +3143,7 @@ drawable ic_search_black_24
 drawable ic_setting
 drawable ic_target
 drawable ic_tick
+drawable ic_upload
 drawable ic_warning
 drawable ic_white_back
 drawable ic_white_barcode_scanner
@@ -3781,6 +3782,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateBtn
 id useLogo
 id vertical_only
 id view_offset_helper
@@ -4032,6 +4034,7 @@ mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw firebase_common_keep
 raw keep_cronet_api
+string DATE_PATTERN
 string _22665261
 string a_th_v_ph_a_camera
 string abc_action_bar_home_description
@@ -4103,7 +4106,6 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
-string date_pattern
 string dest_title
 string dnktpm18
 string emty_cd
@@ -4241,6 +4243,7 @@ string path_password_strike_through
 string preference_copied
 string project_id
 string qu_t
+string queue
 string queue_list
 string s_a
 string scan
@@ -4259,6 +4262,7 @@ string th_m_th_ng_tin_sinh_vi_n_nxxxxxxxx
 string tho_t
 string title_activity_barcode_scanning
 string todo
+string update
 string v7_preference_off
 string v7_preference_on
 string xu_t_data

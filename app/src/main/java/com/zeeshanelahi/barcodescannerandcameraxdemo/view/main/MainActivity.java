@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity{
         //tat action bar
         getSupportActionBar().hide();
         setContentView(viewBinding.getRoot());
-        setUpViewEvents();
 
         setUpFragment();
         setUpBottomNavigation();
@@ -67,8 +66,8 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onStart() {
         super.onStart();
+        setUpViewEvents();
         InternetBroadCastReceiver.getInstance(internetStateListenerer).activeBroadCast(this);
-
     }
 
     private void setUpBottomNavigation() {

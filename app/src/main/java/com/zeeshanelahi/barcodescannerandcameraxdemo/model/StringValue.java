@@ -5,6 +5,7 @@ public class StringValue {
     public static final String LINK_SERVER_KEY = "linkServer";
     public static final String SUCCESS_QUEUE_KEY = "mssv_success_queue";
     public static final String WAITING_QUEUE_KEY = "mssv_queue";
+    public static final String RECONNECT_ACTION = "reconnect-internet";
     public static final int INPUT_FRAGMENT = 2;
     public static final int SCAN_FRAGMENT = 1;
     public static final int SETTING_FRAGMENT = 3;
